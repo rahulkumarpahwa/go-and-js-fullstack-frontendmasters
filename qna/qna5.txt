@@ -1,0 +1,14 @@
+What is the primary purpose of implementing a logging system in a server application?
+To track and record problems and errors, making it easier to diagnose and troubleshoot issues when customers report problems or the server experiences failures
+
+What are two main options for implementing a logging system in a server application?
+Use a cloud-based logging provider with dashboards, or 2. Create a custom logging system that writes logs to a file
+
+In Go, how do you export packages and functions for use in other packages?
+By starting the package, function, variable, or constant name with a capital letter
+
+What is the typical Go pattern for handling potential errors in functions?
+Return two values: the possible value (which can be nil) and an error object (which is nil if no error occurred)
+
+What is the purpose of using defer when working with file operations in Go?
+To ensure that a file is properly closed at the end of a function's execution, even if an error occurs
