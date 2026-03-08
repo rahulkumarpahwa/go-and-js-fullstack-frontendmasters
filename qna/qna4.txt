@@ -1,0 +1,17 @@
+What are the main components of the user interface in this architecture?
+HTML, CSS, images, and YouTube URLs
+
+What are the key technologies used in the front end of this architecture?
+JavaScript, events, web components, local storage, router system, and API service
+
+What are the key technologies used in the front end of this architecture?
+JavaScript, events, web components, local storage, router system, and API service
+
+What are the main components of the back end in this architecture?
+Models, repositories, handlers, loggers, and environmental variables
+
+What database technology is being used in this architecture?
+PostgreSQL using SQL language with support for foreign keys
+
+What is the primary transport layer protocol in this architecture?
+HTTP with GET and POST methods, using JSON for data exchange
