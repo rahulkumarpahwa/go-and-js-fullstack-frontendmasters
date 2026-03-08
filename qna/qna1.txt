@@ -1,0 +1,14 @@
+What are the key technologies being used for the backend and frontend of this project?
+Backend: Go, PostgreSQL; Frontend: HTML, CSS, vanilla JavaScript; Communication: JSON, RESTful APIs
+
+What design pattern will be used to make the data storage more flexible and future-proof?
+Repository pattern, which will allow easier switching between different data storage mechanisms like Postgres or MongoDB
+
+What are the main features planned for the movie application?
+Search movies by keyword, view top and recent movies, see movie details, user registration and authentication, mark movies as favorites and add to watch list
+
+What are the primary development principles being followed in this project?
+Clean code, no frameworks, minimal external libraries, focus on maintainability and readability over pure performance
+
+How will environment configuration be managed in the project?
+Using a micro library for Go that simulates .env files, allowing storage of configuration like database credentials without hard-coding

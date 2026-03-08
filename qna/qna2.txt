@@ -1,0 +1,17 @@
+What command is used to create a new Go module?
+go mod init followed by a project name (typically in a URL-like format)
+
+What are the two dependencies added in this project?
+godotenv (for handling .env files) and a Postgres library for Go
+
+How does Go handle dependencies differently from Node.js?
+Go stores dependencies in a global space in the user's operating system profile, rather than having project-specific dependency folders like Node.js does
+
+What are the two key components typically found in a minimal Go project?
+A package main declaration and a main() function
+
+In Go, what file is typically created first when starting a new project?
+main.go
+
+
+
