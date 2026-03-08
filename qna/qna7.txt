@@ -1,0 +1,14 @@
+What are the two key parameters of an HTTP handler method in Go?
+An HTTP.ResponseWriter and an HTTP.Request pointer, which allow receiving incoming client data and sending responses back to the client
+
+Why is an HTTP request passed as a pointer in Go?
+To avoid creating unnecessary copies of the request and to pass a reference efficiently, preventing memory overhead
+
+What steps are required to send JSON data in a Go HTTP handler?
+Set the response header Content-Type to application/json, 2. Create a JSON encoder using the response writer, 3. Encode the data directly to the writer
+
+How do you create a method for a struct in Go?
+By defining a function with the struct type as a receiver before the function name, such as func (h *MovieHandler) GetTopMovies(...)
+
+How can you handle potential JSON encoding errors in Go?
+Use an if statement to check if the error returned from encoding is not nil, and handle the error appropriately, such as by logging or sending an error response
