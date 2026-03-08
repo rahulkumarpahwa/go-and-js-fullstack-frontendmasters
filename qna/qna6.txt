@@ -1,0 +1,14 @@
+What are the main entities in the movie database project?
+The main entities are Movie, Genre, Actor, and User
+
+In Go, what does an asterisk (*) indicate when used with a data type?
+An asterisk indicates a pointer, which means the field can be nullable or optional, and can potentially store a nil value
+
+What properties does an Actor model typically include?
+An Actor model typically includes ID, first name, last name, and an optional image URL
+
+What properties are included in the Movie model?
+The Movie model includes ID, TMDB_ID, title, tagline, release year, genres, overview, score, popularity, keywords, language, poster URL, trailer URL, and cast
+
+Why is it recommended to create model structures in a project?
+Creating model structures helps mimic object-oriented programming, provides security, enables future-proofing, and helps manage potential database schema changes
