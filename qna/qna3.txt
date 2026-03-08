@@ -1,0 +1,14 @@
+What is the purpose of the 'public' folder in a Go web server?
+The public folder stores all static files that will be sent to the browser, such as CSS, images, web manifests, and HTML files
+
+How do you create a basic web server in Go using the http package?
+Use http.ListenAndServe() with a specified address/port, and optionally handle errors with log.fatal() if the server fails to start
+
+What method is used to serve static files from a directory in Go?
+Use http.FileServer() with a directory path to serve static files, which can be attached to a route using http.Handle()
+
+What is the default behavior when no handler is set for a Go web server?
+When no handler is set, the server will return a 404 Not Found error for any URL request
+
+When developing a Go web server, do you need to restart the server after modifying static files?
+No, you do not need to restart the server when modifying static files; only server code changes require a server restart
