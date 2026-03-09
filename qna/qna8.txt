@@ -1,0 +1,15 @@
+What does HTTP status code 200 indicate?
+Status code 200 means 'okay' or that the request was successful
+
+What are the typical prefixes for HTTP error status codes?
+Client errors and server errors are typically in sections 4 and 5, meaning status codes starting with 4 or 5
+
+What does HTTP status code 500 represent?
+HTTP status code 500 indicates an internal server error where the server encountered a situation it doesn't know how to handle
+
+
+What is the purpose of http.error() in Go?
+The http.error() function creates a new error, sends the error to the writer, creates the appropriate header, and logs the error to the operating system
+
+When using a handler in Go, what are you responsible for using to send a response?
+In a handler, you use the response writer (passed as an argument) to write the response back to the client

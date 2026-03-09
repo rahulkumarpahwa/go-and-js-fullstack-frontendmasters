@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"net/http"
+
+	"rahulkumarpahwa.me/go-and-js-fullstack/handlers"
 	"rahulkumarpahwa.me/go-and-js-fullstack/logger"
 )
 
@@ -24,13 +26,14 @@ func main() {
 	// we are serving the static files such as the images, css and json file.
 	server.Handle("/", http.FileServer(http.Dir("./public")))
 
-
+	movieHandler := handlers.MovieHandler{}
+	server.HandleFunc("/api/movies/top", movieHandler.GetTopMovies)
 
 	logInstance.Info("Server Starting on port " + address)
 	err := http.ListenAndServe(address, server)
 
 	if err != nil {
-		logInstance.Error("Server failed to start ", err )
+		logInstance.Error("Server failed to start ", err)
 		log.Fatalf("Server Failed : %v", err)
 	}
 

@@ -9,6 +9,7 @@ import (
 )
 
 type MovieHandler struct {
+	logger *logger.Logger
 }
 
 func (h *MovieHandler) GetTopMovies(w http.ResponseWriter, r *http.Request) {
@@ -45,5 +46,6 @@ func (h *MovieHandler) GetTopMovies(w http.ResponseWriter, r *http.Request) {
 
 	if err := json.NewEncoder(w).Encode(movies); err != nil {
 		// TODO : Log this!
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
