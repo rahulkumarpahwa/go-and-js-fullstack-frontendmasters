@@ -1,0 +1,15 @@
+What are the primary tables in the proposed database structure?
+Users, movies, genre, actors, user_movies, movie_cast, movie_genre, and movie keywords tables
+
+What is the relationship between users and movies in the database schema?
+It is a one-to-many (1:n) relationship, where one user can have multiple movies
+
+What are some potential benefits of using movie keywords in the database?
+Keywords can help find similar movies by matching common themes or characteristics, such as identifying movies with similar historical periods or genres
+
+What are some recommended PostgreSQL database providers mentioned?
+Supabase, aiven.io, and neon.tech are recommended providers with free plan options
+
+What does the install.go script do in the database setup process?
+It connects to the database, removes comments from the SQL file, splits statements by semicolon, and executes each statement to create tables and populate data
+
