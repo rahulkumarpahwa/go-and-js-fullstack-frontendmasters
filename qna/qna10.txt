@@ -1,0 +1,14 @@
+In Go, how can you define a type that can accept any value?
+Use an empty interface (interface{}) which allows any type of value to be passed
+
+What is the significance of using a lowercase method name in Go?
+A lowercase method name makes it private and only accessible within the same package
+
+When registering HTTP handlers in Go, why does the order of registration matter?
+Handlers are registered in order, and earlier registered handlers can potentially intercept or match URLs before later handlers
+
+How do you call a method on a struct in Go when the method is not called like in other object-oriented languages?
+Use the name of the special argument received in the method, such as H.writeJSONResponse(), instead of using dot notation like in JavaScript
+
+What should you be careful about when working with file servers and URL paths?
+Be aware of trailing slashes, as they can cause redirects or unexpected routing behavior, especially with file servers

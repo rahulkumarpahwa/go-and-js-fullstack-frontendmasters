@@ -23,11 +23,13 @@ func main() {
 
 	server := http.NewServeMux()
 
-	// we are serving the static files such as the images, css and json file.
-	server.Handle("/", http.FileServer(http.Dir("./public")))
-
 	movieHandler := handlers.MovieHandler{}
 	server.HandleFunc("/api/movies/top", movieHandler.GetTopMovies)
+
+	server.HandleFunc("/api/movies/random", movieHandler.GetRandomMovies)
+
+	// we are serving the static files such as the images, css and json file. This should be last route.
+	server.Handle("/", http.FileServer(http.Dir("./public")))
 
 	logInstance.Info("Server Starting on port " + address)
 	err := http.ListenAndServe(address, server)
