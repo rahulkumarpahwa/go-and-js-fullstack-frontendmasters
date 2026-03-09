@@ -1,0 +1,17 @@
+How can you install the live reload tool for Go in Go 1.23 or later?
+Use the 'go install' command directly from the command line
+
+What is the purpose of creating a .air.toml configuration file?
+To specify which file types and directories to watch for changes, typically limiting it to Go files and excluding other directories like 'public'
+
+What problem does the Air tool solve during development?
+It automatically recompiles and restarts the server whenever Go source files change, eliminating the need for manual server restarts
+
+
+Why is it important to configure Air to only watch Go files?
+To prevent unnecessary backend recompilation when making frontend changes (HTML, CSS, JavaScript), which would slow down the development process
+
+What command can you use to check if the Air tool is installed correctly?
+Simply type 'air' in the terminal, and it should start watching files and provide information about the watched directories
+
+
