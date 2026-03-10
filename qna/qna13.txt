@@ -1,0 +1,14 @@
+What is the purpose of creating a .env file in the project?
+To store environment variables like the database connection string, which can be used across the application while keeping sensitive information separate from the code
+
+How does Go handle reading .env files?
+Go doesn't natively read .env files, so a library like godotenv is used to parse and load environment variables
+
+What naming convention difference exists between Go structs and database table fields?
+Go structs typically use camelCase with capital first letters (e.g., FirstName), while database table fields often use snake_case with lowercase letters (e.g., first_name)
+
+How can you map Go struct fields to different database column names?
+By adding metadata tags to the struct fields, such as json:"column_name", which allows mapping between Go struct properties and database column names
+
+What steps are involved in connecting to a PostgreSQL database in Go?
+Load environment variables, retrieve the database connection string using os.Getenv(), open the database connection with the connection string, and handle any potential connection errors
