@@ -1,0 +1,15 @@
+What is the purpose of using an underscore (_) when importing a database driver in Go?
+The underscore import allows loading the library even if its functions are not directly used, which is necessary for registering the database driver with the SQL library so it can be used for database connections.
+
+What is the primary security concern when constructing SQL queries?
+SQL injection, where malicious users might attempt to modify the query by inserting additional SQL commands. Using parameterized queries with positional arguments (like $1, $2) helps prevent SQL injection by safely replacing values.
+
+How does Go handle interface implementation for database repositories?
+Go uses structural typing, meaning an interface is automatically implemented if a type has all the required methods with matching signatures. There's no explicit 'implements' keyword needed.
+
+
+What is a cursor in database querying?
+A cursor is a pointer to the result set of a database query that allows row-by-row retrieval. It does not load all data at once, but allows lazy loading by moving through rows as needed.
+
+What is the purpose of using a factory pattern when creating a database repository in Go?
+The factory pattern allows flexible object creation, potentially supporting multiple database connections or instances, and provides a standardized way to construct repository objects with required dependencies like database connection and logger.

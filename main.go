@@ -7,8 +7,11 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	"rahulkumarpahwa.me/go-and-js-fullstack/data"
 	"rahulkumarpahwa.me/go-and-js-fullstack/handlers"
 	"rahulkumarpahwa.me/go-and-js-fullstack/logger"
+
+	_ "github.com/jackc/pgx/v5/stdlib" // special kind of import for the drivers
 )
 
 func initialiseLogger() *logger.Logger {
@@ -42,10 +45,17 @@ func main() {
 	}
 	defer db.Close()
 
+	// Initailise the Data Repository for Movies
+	movieRepository, err := data.NewMovieRepository(db, logInstance)
+	if err != nil {
+		log.Fatal("Failed to create the Movie Respository", err)
+	}
+
 	// movie handler instance
-	movieHandler := handlers.MovieHandler{}
+	movieHandler := handlers.MovieHandler{Logger: logInstance, MovieRepository: movieRepository}
 	server.HandleFunc("/api/movies/top", movieHandler.GetTopMovies)
 	server.HandleFunc("/api/movies/random", movieHandler.GetRandomMovies)
+	server.HandleFunc("/api/genres/top", movieHandler.GetTopGenres)
 
 	// we are serving the static files such as the images, css and json file. This should be last route.
 	server.Handle("/", http.FileServer(http.Dir("./public")))
