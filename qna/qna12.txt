@@ -1,0 +1,15 @@
+What is the purpose of creating an interface in the context of database interactions?
+To create an abstraction layer that allows future-proofing the backend project, enabling easy switching between different database implementations like Postgres, MySQL, or MongoDB without changing the core application logic
+
+
+What methods are typically defined in the movie storage interface?
+GetTopMovies, GetRandomMovies, GetMovieByID, SearchMovies, and GetAllGenres, each returning a collection of movies or a single movie along with a potential error
+
+Why is it recommended to return an error along with data in method signatures?
+To enable passing error messages across different layers of the application, providing more robust error handling and communication between components
+
+What is the difference between returning a value versus a pointer in Go?
+Returning a value creates a copy of the data, while returning a pointer references the original data, which can be more memory-efficient but may slightly reduce code readability
+
+What benefits does creating an interface provide for database interactions?
+Interfaces allow for easier implementation of different data sources, support modular design, enable easier testing, and provide a consistent contract for database operations across different implementations
