@@ -53,9 +53,13 @@ func main() {
 
 	// movie handler instance
 	movieHandler := handlers.MovieHandler{Logger: logInstance, Storage: movieRepository}
-	server.HandleFunc("/api/movies/top", movieHandler.GetTopMovies)
 	server.HandleFunc("/api/movies/random", movieHandler.GetRandomMovies)
-	server.HandleFunc("/api/genres/top", movieHandler.GetTopGenres)
+	server.HandleFunc("/api/movies/top", movieHandler.GetTopMovies)
+	// http://localhost:8080/api/movies/search?name="apple"&order="DESC"&genre="1"
+	server.HandleFunc("/api/movies/search", movieHandler.SearchMoviesByName)
+	server.HandleFunc("/api/movies/", movieHandler.GetMovieById)
+	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
+
 
 	// we are serving the static files such as the images, css and json file. This should be last route.
 	server.Handle("/", http.FileServer(http.Dir("./public")))

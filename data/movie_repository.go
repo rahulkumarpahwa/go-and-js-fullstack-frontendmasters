@@ -106,7 +106,7 @@ func (r *MovieRepository) GetAllGenres() ([]models.Genre, error) {
 	return genres, nil
 }
 
-func (r *MovieRepository) GetMovieByID(id int) (models.Movie, error) {
+func (r *MovieRepository) GetMovieById(id int) (models.Movie, error) {
 	// Fetch movie
 	query := `
 		SELECT id, tmdb_id, title, tagline, release_year, overview, score, 

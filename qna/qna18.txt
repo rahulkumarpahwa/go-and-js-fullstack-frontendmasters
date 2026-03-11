@@ -1,0 +1,17 @@
+What is the primary responsibility of a handler in this context?
+A handler speaks HTTP, reads URL parameters, processes requests, sends JSON responses, and acts as an interface between HTTP requests and the data repository
+
+What is the significance of the order of handler registration in an HTTP server?
+The order of handler registration is crucial because more specific routes must be registered after more general routes to ensure proper request routing and handling
+
+What are the different HTTP endpoints being registered for the movie API?
+The endpoints include /api/movies/search, /api/movies/{id}, /api/movies/genres, and /api/movies/random
+
+How does data transfer between layers differ in this architecture?
+The handler layer speaks HTTP and URL parameters, while the repository layer communicates using models and SQL, creating a clear separation of concerns
+
+What are the key operations being supported by the movie API endpoints?
+The endpoints support retrieving top movies, random movies, searching movies by keyword or genre, getting a specific movie by ID, and retrieving movie genres
+
+Why is the order of route registration important in this HTTP server?
+Routes registered first will be matched before more specific routes
