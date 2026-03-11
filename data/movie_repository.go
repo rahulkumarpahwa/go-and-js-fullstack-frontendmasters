@@ -184,6 +184,8 @@ func (r *MovieRepository) SearchMoviesByName(name string, order string, genre *i
 			r.logger.Error("Failed to scan movie row", err)
 			return nil, err
 		}
+		// Fetch related data
+		r.fetchMovieRelations(&m) // I am adding this myself to get the all details
 		movies = append(movies, m)
 	}
 

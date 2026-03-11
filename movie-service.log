@@ -266,3 +266,4 @@ ERROR: 2026/03/11 21:49:25 logger.go:35: Server failed to start : listen tcp :80
 ERROR: 2026/03/11 21:49:31 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 ERROR: 2026/03/11 21:49:34 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 ERROR: 2026/03/11 21:49:47 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ERROR: 2026/03/11 21:53:02 logger.go:35: Error in the id Conversion to Int : strconv.Atoi: parsing "": invalid syntax
