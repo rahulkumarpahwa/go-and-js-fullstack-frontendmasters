@@ -1,0 +1,14 @@
+What could cause a 404 error when accessing an API endpoint?
+Trailing slashes and browser cache can cause 404 errors, requiring cache clearing or precise URL matching
+
+When writing SQL queries in Go, what must be ensured about query arguments?
+The number of arguments in the query must match the number of arguments passed to the query method
+
+Describe the typical request-response flow in a Go backend API
+HTTP request → Handler → Model Repository → SQL Query → Rows → Slice of Models → JSON Response → HTTP Response
+
+What steps are typically involved in converting database rows to an API response?
+Execute SQL query 2. Retrieve database rows 3. Convert rows to a slice of model objects 4. Convert model slice to JSON 5. Send JSON response
+
+How can you debug an internal server error in a Go web application?
+Check terminal logs, inspect handler logic, verify database query arguments, and add error logging in each component of the request flow
