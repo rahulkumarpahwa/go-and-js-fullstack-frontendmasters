@@ -1,0 +1,14 @@
+What does the asterisk on an integer parameter signify in database queries?
+It indicates that the parameter is nullable or optional, meaning the value can be absent or not provided
+
+What is the difference between 'like' and 'ilike' in Postgres?
+ILike is similar to like, but performs case-insensitive matching of strings
+
+What does fetchMovieRelation method do in the MovieRepository?
+It retrieves additional movie-related information such as actors and keywords, and attaches this data to the movie model
+
+Why might a developer choose to split database queries instead of using a single large query?
+To maintain clean, readable code, even if a single large query might be faster to execute
+
+What additional data is retrieved when getting movie details beyond basic movie metadata?
+Movie details can include actors, full cast, and keywords, which require additional queries to other related database tables
