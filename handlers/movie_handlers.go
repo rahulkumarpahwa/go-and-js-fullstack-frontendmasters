@@ -10,8 +10,8 @@ import (
 )
 
 type MovieHandler struct {
-	Logger          *logger.Logger
-	MovieRepository *data.MovieRepository
+	Logger  *logger.Logger
+	Storage data.MovieStorage
 }
 
 // we will take it as the helper function which will take data of type any and then write that to the w.
@@ -19,7 +19,7 @@ func (h *MovieHandler) writeJSONResponse(w http.ResponseWriter, data interface{}
 	w.Header().Set("content-type", "application/json")
 
 	if err := json.NewEncoder(w).Encode(data); err != nil {
-		// TODO : Log this!
+		h.Logger.Error("JSON Enconding error ", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
@@ -55,18 +55,18 @@ func (h *MovieHandler) GetTopMovies(w http.ResponseWriter, r *http.Request) {
 	// 		Casting:     []models.Actor{{ID: 3, FirstName: "Lara", LastName: "Hunt"}},
 	// 	}}
 
-	movies, err := h.MovieRepository.GetTopMovies()
+	movies, err := h.Storage.GetTopMovies()
 	if err != nil {
-		// TODO : Log this!
+		h.Logger.Error("Get Top Movies Not found error ", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 	h.writeJSONResponse(w, movies)
 }
 
 func (h *MovieHandler) GetRandomMovies(w http.ResponseWriter, r *http.Request) {
-	movies, err := h.MovieRepository.GetRandomMovies()
+	movies, err := h.Storage.GetRandomMovies()
 	if err != nil {
-		// TODO : Log this!
+		h.Logger.Error("Get Random Movies Not found error ", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
@@ -74,10 +74,10 @@ func (h *MovieHandler) GetRandomMovies(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *MovieHandler) GetTopGenres(w http.ResponseWriter, r *http.Request) {
-	genres, err := h.MovieRepository.GetAllGenres()
+	genres, err := h.Storage.GetAllGenres()
 
 	if err != nil {
-		// TODO : Log this!
+		h.Logger.Error("Get Top Genres Not found error ", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 

@@ -1,0 +1,14 @@
+What is the purpose of using an interface for storage in the movie handler?
+Using an interface allows for abstraction and flexibility, enabling different implementations of storage to be used without changing the handler's code. This creates an abstraction layer that allows changing the data provider in the future without modifying the handler's implementation.
+
+What two types of objects are communicating in the backend architecture?
+The handler (which speaks HTTP) and the repository (which speaks SQL) are communicating. The handler receives HTTP requests, interacts with the repository to fetch data, and then sends HTTP responses.
+
+Why does the GetTopMovies method return two values?
+The GetTopMovies method returns two values to allow for error handling. The first value is the result (a slice of movies), and the second value is an error, which enables each layer to handle potential errors during data retrieval.
+
+What is the significance of using a lowercase versus uppercase first letter when defining struct fields in Go?
+In Go, a lowercase first letter means the field is private (only accessible within the same package), while an uppercase first letter makes the field public (accessible from other packages). When initializing a struct, the case determines the field's visibility and accessibility.
+
+What are the main layers in this backend architecture?
+The main layers are: HTTP (handling web requests), Handlers (processing requests), Repositories (interacting with the database), Models (representing data structures), and the Database itself. Each layer communicates with the adjacent layers using well-defined interfaces and methods.

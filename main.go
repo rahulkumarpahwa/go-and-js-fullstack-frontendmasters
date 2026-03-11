@@ -52,7 +52,7 @@ func main() {
 	}
 
 	// movie handler instance
-	movieHandler := handlers.MovieHandler{Logger: logInstance, MovieRepository: movieRepository}
+	movieHandler := handlers.MovieHandler{Logger: logInstance, Storage: movieRepository}
 	server.HandleFunc("/api/movies/top", movieHandler.GetTopMovies)
 	server.HandleFunc("/api/movies/random", movieHandler.GetRandomMovies)
 	server.HandleFunc("/api/genres/top", movieHandler.GetTopGenres)
