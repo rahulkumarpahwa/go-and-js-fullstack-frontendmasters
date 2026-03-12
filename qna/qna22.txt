@@ -1,0 +1,18 @@
+What is a web component?
+A modular, reusable building block for web development that encapsulates a set of related functionality and user interface elements, essentially creating a custom HTML element that can be reused
+
+What are the key standards/technologies used in web components?
+Custom Elements, HTML Templates, and Shadow DOM. Custom Elements let developers register new browser tags, HTML Templates allow writing HTML for components in the DOM, and Shadow DOM creates an encapsulated DOM for a component
+
+What is the purpose of an HTML template element in web components?
+It allows developers to define HTML markup that is parsed by the browser but not rendered by default, requiring JavaScript to bring the template into use in a web component
+
+How does Shadow DOM help with styling in web components?
+Shadow DOM creates an encapsulated DOM for a component, allowing each component to have its own CSS that won't affect elements outside the component
+
+What makes web components different from library/framework components?
+Web components are created using vanilla JavaScript with no libraries or frameworks, providing developers with freedom of choice in how to define and use components
+
+
+What is the benefit of using Shadow DOM in web components?
+It creates an encapsulated DOM where CSS is isolated from the outside

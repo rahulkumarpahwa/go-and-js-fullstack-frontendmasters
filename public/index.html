@@ -9,7 +9,7 @@
     <link rel="manifest" href="app.webmanifest" />
     <link rel="icon" href="./images/icon.png" type="image/x-icon" />
     <!-- defer maakes the download of the js file along with parsing the html and they will load together which makes the performance high -->
-    <script type="module" src="./app.js" defer></script> 
+    <script type="module" src="./app.js" defer></script>
   </head>
   <body>
     <header>
@@ -28,7 +28,22 @@
         </form>
       </div>
     </header>
-    <main></main>
+    <main>
+      <!-- web component (read slides), more like an react component. -->
+    </main>
+
+    <!-- this template will be parsed by the browser but not rendered. we will use the js to get in the web component.-->
+    <template id="template-home">
+      <section class="vertical-scroll" id="top-10">
+        <h2>This Week's Top Movies!</h2>
+        <ul></ul>
+      </section>
+      <section class="vertical-scroll" id="random">
+        <h2>Something to Watch Today!</h2>
+        <ul></ul>
+      </section>
+    </template>
+
     <footer>
       <p>Copyright &copy; Reeling It 2026-27</p>
     </footer>
