@@ -1,0 +1,14 @@
+What is the purpose of creating an API service in JavaScript?
+An API service is a design pattern in JavaScript to create an object on the client side that communicates with a backend through HTTP requests, allowing interaction with server-side resources.
+
+How does the Fetch API handle HTTP responses in JavaScript?
+The Fetch API returns a promise with an HTTP response, which requires calling .json() to parse the response body into a JSON object, and using await to handle the asynchronous operation.
+
+What is the significance of adding .js extensions when importing modules in vanilla JavaScript?
+In vanilla JavaScript, browsers require explicit .js file extensions when importing modules, unlike bundlers that automatically resolve file extensions. Developers must manually specify the full file extension to ensure correct module loading.
+
+How can errors be handled when making asynchronous API calls in JavaScript?
+Errors in asynchronous API calls can be handled using try-catch blocks, which allow capturing and handling potential exceptions that might occur during fetch operations, such as network failures or server errors.
+
+What is the purpose of using URLSearchParams when constructing API query strings?
+URLSearchParams provides a convenient way to construct query strings dynamically by converting an object of arguments into a properly formatted URL parameter string, making it easier to send multiple parameters in an API request.
