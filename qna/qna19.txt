@@ -1,0 +1,14 @@
+What is the purpose of a web app manifest file?
+It defines metadata for a website, provides information like color and icon for browsers, and is used when adding a website to the home screen or as an app
+
+What HTML input type should be used for search functionality?
+Use input type="search" instead of input type="text", as it provides more semantic meaning and additional attributes
+
+How are colors defined in the CSS for this project?
+Colors are defined using CSS variables at the top of the stylesheet, allowing easy reuse and modification of the color palette
+
+What are the main sections of the HTML structure being created?
+The HTML structure includes a header (with logo, navigation, and search), main content section, and footer
+
+What attributes should be added to an image tag?
+An image tag should include both a source (src) and an alternative text (alt) for accessibility and proper rendering

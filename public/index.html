@@ -3,41 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      img {
-        width: 100px;
-        height: 100 px;
-      }
-    </style>
+    <title>Go and Js Vanilla FullStack Course</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- manifest file is for the meta data for the website when someone download it as the app from the browser and also for the PWA(progressive web apps) -->
+    <link rel="manifest" href="app.webmanifest" />
+    <link rel="icon" href="./images/icon.png" type="image/x-icon" />
   </head>
-  <body
-    style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 4px;
-    "
-  >
-    <a href="./styles.css">Style File</a>
-    <a href="./app.webmanifest">Manifest File</a>
-    <a href="./images/">Images</a>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      "
-    >
-      <img src="./images/icon.png" alt="" /><img
-        src="./images/generic_actor.jpg"
-        alt=""
-      /><img src="./images/logo.png" alt="" /><img
-        src="./images/logo.svg"
-        alt=""
-      />
-    </div>
+  <body>
+    <header>
+      <h1><img src="./images/logo.svg" height="35" alt="ReelingIt" /></h1>
+      <nav>
+        <ul>
+          <li><a class="navlink" href="/api/movies/top">Movies</a></li>
+          <li><a class="navlink" href="">Favorites</a></li>
+          <li><a class="navlink" href="">Watchlist</a></li>
+          <li><a class="navlink" href="/account">My Account</a></li>
+        </ul>
+      </nav>
+      <div>
+        <form onsubmit="app.search(event)">
+          <input type="search" placeholder="Search Movies" />
+        </form>
+      </div>
+    </header>
+    <main></main>
+    <footer>
+      <p>Copyright &copy; Reeling It 2026-27</p>
+    </footer>
   </body>
 </html>
