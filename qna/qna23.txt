@@ -1,0 +1,14 @@
+What is the mandatory requirement for naming a custom HTML element?
+The custom element must contain a hyphen, with at least two words. For example, 'home-page' or 'app-component' are valid names.
+
+What method is used in web components to execute code when an element is added to the DOM?
+The 'connectedCallback' method is used to execute code when an element is added to the DOM, similar to a mounted event.
+
+How do you create a clone of a template's content in web components?
+Use the template.content.cloneNode(true) method, which creates a deep clone of the template's content that can be appended to an element.
+
+What is the base class that all web components must extend?
+Web components must extend the HTMLElement base class to be recognized as custom elements.
+
+What is the purpose of registering a custom element using the Custom Elements API?
+Registering a custom element using the Custom Elements API allows the browser to recognize and render the new HTML element correctly.
