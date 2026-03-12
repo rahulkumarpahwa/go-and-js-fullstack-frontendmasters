@@ -8,6 +8,8 @@
     <!-- manifest file is for the meta data for the website when someone download it as the app from the browser and also for the PWA(progressive web apps) -->
     <link rel="manifest" href="app.webmanifest" />
     <link rel="icon" href="./images/icon.png" type="image/x-icon" />
+    <!-- defer maakes the download of the js file along with parsing the html and they will load together which makes the performance high -->
+    <script type="module" src="./app.js" defer></script> 
   </head>
   <body>
     <header>

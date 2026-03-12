@@ -1,0 +1,14 @@
+What is the purpose of event.preventDefault() in a form submission event?
+To stop the browser from reloading the page or performing a default form submission, allowing custom client-side handling of the form event
+
+How can you select an input element of type search using a query selector?
+Use document.querySelector('input[type="search"]') to select the search input element
+
+What does the type="module" attribute do when added to a script tag?
+Enables ECMAScript modules, allowing JavaScript files to import from other files and create a dependency tree without explicitly adding multiple script tags
+
+What is the difference between parsing and loading in web browser context?
+Parsing is when the browser reads HTML and creates the DOM, while loading involves fully downloading all resources like CSS and images
+
+What does the defer attribute do when added to a script tag?
+Downloads script files in parallel with HTML parsing and executes the scripts only after parsing is complete, which can improve web performance
