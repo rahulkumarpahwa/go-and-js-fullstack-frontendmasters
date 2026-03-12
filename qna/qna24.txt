@@ -1,0 +1,14 @@
+What method is used to dynamically render content in the web component?
+The render method, which is an async method that fetches data from the API and populates the web component's template with movie lists
+
+How can functions be created within other functions in JavaScript?
+JavaScript allows creating local functions inside other functions, which is a valid technique, though not commonly used
+
+What DOM methods are used to create and append list items dynamically?
+Using document.createElement('li') to create list items and list.appendChild(listItem) to append them to the unordered list
+
+What are two ways to set content inside a dynamically created list item?
+Using listItem.innerHtml or listItem.textContent to set the content of the list item
+
+Why might getElementById be problematic when selecting elements within a web component?
+Using getElementById might select and replace elements beyond the intended target, such as section titles. Using querySelector with a specific ID is more precise
