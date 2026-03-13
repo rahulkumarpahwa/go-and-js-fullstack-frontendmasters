@@ -1,0 +1,14 @@
+What is the primary role of app.js in the client-side architecture?
+It acts as the connection to the UI, handling interactions like calling methods such as app.search from HTML elements
+
+What is the main responsibility of API.js?
+It centralizes making requests to the backend, parsing responses, and handling HTTP status codes like 200 or errors
+
+In the server-side architecture, what are the key responsibilities of main.go?
+It serves as the entry point of the application, sets up the server, connects to the database, reads connection strings, and sets up handlers
+
+What is the role of a handler in the server-side architecture?
+Handlers manage HTTP requests, read incoming requests, determine the appropriate response based on routes, and communicate with model repositories to retrieve or process data
+
+What is the purpose of the repository in the data package?
+Repositories make direct queries to the database and return data back to handlers in the form of models or slices of models
