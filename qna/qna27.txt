@@ -1,0 +1,14 @@
+What is the recommended modern pattern for indicating loading state in web applications?
+Instead of using traditional spinners or progress bars, use a wavy animation with placeholders that have a moving gradient effect, creating a wave-like animation that suggests content is loading
+
+What is the purpose of using the data- prefix for custom attributes in HTML?
+Using data- prefix ensures future compatibility with HTML specifications, prevents potential naming conflicts with future standard attributes, and provides a dedicated JavaScript API for accessing these attributes
+
+When creating a web component, in which method should you read HTML attributes?
+n the connectedCallback() method, not the constructor. The constructor is executed before the HTML attributes are parsed, so reading attributes in the constructor will not work correctly
+
+How can you access data- attributes in a web component?
+Use the this.dataset property, which automatically converts data attributes to properties without the data- prefix. For non-data attributes, use this.getAttribute() method
+
+What is the difference between display: block, display: inline, and display: inline-block?
+display: block takes the full width of the parent element, display: inline does not create a box and shares space with other elements, and display: inline-block allows inline positioning while still supporting block-level properties like margin and padding

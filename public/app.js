@@ -1,6 +1,7 @@
 // import { HomePage } from "./components/HomePage.js";
 import { API } from "./services/api.js";
 import "./components/HomePage.js";
+import "./components/LoadingWave.js";
 // import { HomePage } from "./components/HomePage.js";
 
 // window.addEventListener("DOMContentLoaded", (event) => {
