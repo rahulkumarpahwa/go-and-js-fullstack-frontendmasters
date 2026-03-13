@@ -1,11 +1,10 @@
 import { API } from "../services/api.js"; // always add the .js at the end.
+import { MovieItem } from "./MovieItem.js";
 
 export class HomePage extends HTMLElement {
   constructor() {
     super(); // must call this
   }
-
-  
 
   // custom method not the one given by the HTMLElement class
   async render() {
@@ -23,12 +22,9 @@ export class HomePage extends HTMLElement {
 
     function renderMoviesInList(movies, ul) {
       ul.innerHTML = "";
-      movies.forEach((obj) => {
+      movies.forEach((movie) => {
         const li = document.createElement("li");
-        li.innerHTML = `<div>
-                    <img src="${obj.poster_url}" alt="${obj.title}"/>
-                    <p>${obj.title}</p>
-        </div>`;
+        li.appendChild(new MovieItem(movie));
         ul.appendChild(li);
       });
     }

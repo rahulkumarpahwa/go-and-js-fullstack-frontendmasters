@@ -1,0 +1,14 @@
+What is the recommended method for creating a new Web Component when you need to pass properties from the outside?
+Use the constructor to receive arguments, call super() as the first step, save the passed property in a local property, and then render the component in the connectedCallback method.
+
+What are two common patterns for handling large datasets of movies or search results?
+Paging (creating pages with next and previous buttons) and Infinity scroll (automatically loading more items when scrolling to the end of the current list).
+
+What are potential challenges with Single Page Applications (SPAs) regarding search engine optimization?
+Search engines and AI search tools may not see the dynamic data, as they typically only read the initial HTML source, which can lead to poor indexing and SEO performance.
+
+What is an alternative to using a <template> element when creating a Web Component?
+Manually writing HTML using innerHTML and template strings (backticks), similar to how some frameworks like Angular handle templates directly in the component file.
+
+What is a recommended practice when setting the alt attribute for an image in a Web Component?
+Use a descriptive text that includes the item's title and indicates what the image represents, such as 'Batman poster' or '[Movie Title] poster'.
