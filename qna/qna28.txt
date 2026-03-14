@@ -1,0 +1,16 @@
+What is the purpose of the noscript tag in HTML?
+The noscript tag provides fallback content for browsers that do not support JavaScript or have JavaScript disabled. It allows developers to display alternative content or messages when script functionality is not available.
+
+What is the difference between textContent and innerHTML?
+textContent safely inserts text without parsing HTML, while innerHTML can parse and render HTML, which can be a security risk due to potential cross-site scripting vulnerabilities. textContent is faster and more secure for inserting plain text.
+
+How do you create a custom HTML element using JavaScript?
+Create a class that extends HTMLElement, then register the element using customElements.define() with a custom tag name containing at least one dash. Example: class MyElement extends HTMLElement { }; customElements.define('my-element', MyElement);
+
+What is the purpose of the connected callback method in a web component?
+The connected callback method is a lifecycle method that is called when the web component is inserted into the DOM. It is typically used for initialization tasks such as setting up event listeners, rendering initial content, or performing setup operations.
+
+How can you handle errors when fetching data in a web component?
+Use a try-catch block when fetching data to handle potential errors. In the catch block, you can display an error message, log the error, or take alternative actions such as showing a fallback UI or notifying the user about the failed data retrieval.
+
+

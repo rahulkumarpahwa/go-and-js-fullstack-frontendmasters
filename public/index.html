@@ -30,8 +30,9 @@
     </header>
     <main>
       <!-- web component (read slides), more like an react component. -->
-       <!-- <loading-wave data-elements="10" data-width="300px" data-height="200px"></loading-wave> -->
-       <home-page></home-page>
+      <!-- <loading-wave data-elements="10" data-width="300px" data-height="200px"></loading-wave> -->
+      <movie-details-page></movie-details-page>
+      <home-page></home-page>
     </main>
 
     <!-- this template will be parsed by the browser but not rendered. we will use the js to get in the web component.-->
@@ -44,6 +45,32 @@
         <h2>Something to Watch Today!</h2>
         <ul></ul>
       </section>
+    </template>
+
+    <!-- template of movie details -->
+    <template id="template-movie-details">
+      <article id="movie">
+        <h2>
+          <loading-wave
+            elements="2"
+            data-width="300px"
+            data-height="200px"
+          ></loading-wave>
+        </h2>
+        <h3></h3>
+        <header>
+          <img src="" alt="Poster" />
+          <youtube-embed id="trailer" data-url=""></youtube-embed>
+          <section id="actions">
+            <dl id="metadata"></dl>
+            <button>Add to Favorites</button>
+            <button>Add to Watchlist</button>
+          </section>
+        </header>
+        <ul id="genres"></ul>
+        <p id="overview"></p>
+        <ul id="cast"></ul>
+      </article>
     </template>
 
     <footer>
