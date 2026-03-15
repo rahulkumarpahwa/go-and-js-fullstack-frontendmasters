@@ -25,6 +25,7 @@ export class MovieDetailsPage extends HTMLElement {
     this.querySelector("h2").textContent = this.movie.title;
     this.querySelector("h3").textContent = this.movie.tagline;
     this.querySelector("img").src = this.movie.poster_url;
+    this.querySelector("#trailer").dataset.url = this.movie.trailer_url; // we are setting the trailer url after the template is injected in the DOM so we will get it in the connectedCallback to use the value of data-url we set here.
     this.querySelector("#overview").textContent = this.movie.overview;
     this.querySelector("#metadata").innerHTML = `
     <dt>Release Year</dt>

@@ -1,0 +1,16 @@
+How do you define a custom web component in JavaScript?
+Create a class that extends HTMLElement, export the class, and use customElements.define() to register the custom element with a specific tag name
+
+What is the purpose of the attributeChangedCallback method in a web component?
+It allows tracking and responding to changes in specific attributes of the web component, such as when a data attribute is modified
+
+How do you specify which attributes a web component should observe?
+Implement a static getter method called getObservedAttributes() that returns an array of attribute names you want to track
+
+How can you extract a YouTube video ID from a URL?
+Look for the substring starting after 'v=' or '?v=' and extract the subsequent characters representing the video ID
+
+What method is used to register a web component with the browser?
+Use customElements.define() with the custom tag name and the class that extends HTMLElement
+
+
