@@ -1,0 +1,16 @@
+What is a definition list (DL) in HTML and how is it typically used?
+A definition list (DL) is an HTML element used to represent key-value pairs, similar to a dictionary. It uses DT (definition term) and DD (definition description) tags to create a structured list of terms and their corresponding definitions.
+
+What does the null coalescing operator (??) do in JavaScript?
+The null coalescing operator (??) checks a condition and returns the second value if the first value is true or not null. If the first value is null or undefined, it returns the second value, providing a way to handle default values.
+
+What HTML element is used to render the metadata in the movie details page?
+The definition list (<dl>) element is used to render the metadata, with each piece of metadata represented by a definition term (<dt>) and definition description (<dd>) pair.
+
+How can a custom element with nested elements be treated in HTML and JavaScript?
+Custom elements with nested elements can be treated the same as native elements. They can be used directly in HTML or manipulated using JavaScript methods like appendChild(), with no special treatment required.
+
+What is the purpose of using a fallback image for actor profiles?
+The fallback image is used when an actor does not have a specific image URL. By using the null coalescing operator, a generic actor JPEG file can be displayed if no image is available from the database.
+
+
