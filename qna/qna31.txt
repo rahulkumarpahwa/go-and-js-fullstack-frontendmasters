@@ -1,0 +1,14 @@
+What is the primary goal of client-side routing in a single page application (SPA)?
+To handle different URLs and render appropriate components without reloading the entire page, allowing users to navigate between different views seamlessly
+
+How can a routing path include dynamic parameters in a regular expression?
+By using parentheses () to capture variables, such as \/movie\/(\d+) to capture one or more numeric digits as a parameter
+
+What design pattern is used to manage client-side routing?
+Router design pattern, which is not a built-in API but a custom implementation typically available in web frameworks and libraries
+
+What does the + symbol represent in a regular expression for routing?
+The + means one or more occurrences of the preceding character or pattern, such as one or more digits
+
+How are routes typically defined in a custom routing system?
+As an array of objects/configurations containing a path (which can be a string or regular expression) and a corresponding component to render
