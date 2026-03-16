@@ -19,8 +19,10 @@ export const API = {
 
   fetch: async (ServiceWorker, args) => {
     try {
-      const queryString = args ? new URLSearchParams(args).toString : "";
-      const response = await fetch(API.baseURL + ServiceWorker + "?" + queryString);
+      const queryString = args ? new URLSearchParams(args).toString() : "";
+      const response = await fetch(
+        API.baseURL + ServiceWorker + "?" + queryString,
+      );
       const result = await response.json();
       return result;
     } catch (error) {

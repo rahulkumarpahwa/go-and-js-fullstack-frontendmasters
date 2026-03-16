@@ -5,6 +5,14 @@ export const Router = {
       Router.go(location.pathname, false);
     });
 
+    document.querySelectorAll("a.navlink").forEach((a) => {
+      a.addEventListener("click", (event) => {
+        event.preventDefault();
+        const href = a.getAttribute("href");
+        Router.go(href);
+      });
+    });
+
     // go to initial route:
     Router.go(location.pathname + location.search);
   },

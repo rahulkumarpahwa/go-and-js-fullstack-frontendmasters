@@ -8,10 +8,11 @@ export class MovieItem extends HTMLElement {
    - this will be called after the DOM will be parsed. this is like mounting the component.
    */
   connectedCallback() {
-    this.innerHTML = `<a href ="#"><article>
+    const url = "/movies/" + this.movie.id;
+    this.innerHTML = `<a onclick="app.Router.go('${url}')"><article>
                     <img src="${this.movie.poster_url}" alt="${this.movie.title} Poster"/>
                     <p>${this.movie.title}  ${this.movie.release_year}</p>
-        </artcile></a>`;
+        </article></a>`;
   }
 }
 

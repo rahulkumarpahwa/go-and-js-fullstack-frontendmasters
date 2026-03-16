@@ -1,0 +1,14 @@
+What is the purpose of preventing the default action on navigation links?
+To stop the browser from refreshing the page and allow custom client-side routing, enabling smoother navigation without full page reloads
+
+What are two ways to retrieve the href value of a link in JavaScript?
+Using getAttribute('href') or accessing the href property directly. The key difference is that getAttribute() retrieves the original HTML attribute value, while href reflects the current value which might have been modified by JavaScript
+
+Why is it beneficial to create a custom router in Vanilla JavaScript?
+Creating a custom router provides a reusable micro-library for routing that can be used across different projects, giving developers more control and understanding of the routing mechanism
+
+How can you enhance existing links to work with a custom client-side router?
+By using querySelectorAll() to select links, adding an event listener to prevent default navigation, retrieving the href, and using a custom routing method to handle navigation
+
+What is the purpose of the router's init() method?
+To initialize the router when the page loads, check the current URL, and render the appropriate page without a full page refresh

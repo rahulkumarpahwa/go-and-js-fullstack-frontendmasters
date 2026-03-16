@@ -8,7 +8,7 @@ export class MoviePage extends HTMLElement {
 
   async render() {
     try {
-      const movies = await API.searchMovies(window.q);
+      const movies = await API.searchMovies(window.q, "", "");
       this.movies = movies;
     } catch (error) {
       console.log(error);
@@ -19,7 +19,7 @@ export class MoviePage extends HTMLElement {
     const movieDetailsTemplate = document.getElementById(
       "template-movie-details",
     );
-    
+
     this.movies.forEach((movie) => {
       const content = movieDetailsTemplate.content.cloneNode(true);
       content.querySelector("h2").textContent = movie.title;
