@@ -1,0 +1,14 @@
+What are the two types of paths that can be used in routing?
+Strings and regular expressions
+
+How can you extract parameters from a route using a regular expression?
+By using the match method and slicing the result, which will return an array of parameters
+
+What method is used to separate a string into an array?
+The split() method, which separates a string into an array based on a specified delimiter
+
+How can you obtain the path segment of a URL without query parameters?
+By checking if the URL includes a question mark, and if so, splitting the URL and taking the first segment before the question mark
+
+What does creating a new instance of a component look like in JavaScript?
+Using the new keyword followed by the component constructor, such as new r.component
