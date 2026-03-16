@@ -1,0 +1,14 @@
+How does camel case convert to HTML data attributes?
+Camel case converts to kebab case (with hyphens). For example, 'urlParams' becomes 'data-url-params' automatically.
+
+How does a router determine which route to use when multiple routes exist?
+The router uses the first route that matches the current URL. The order of routes is important, and the first matching route will be selected.
+
+How does a router handle URL changes?
+The router reads the new URL and determines where to go, regardless of the previous page. It focuses on the destination URL, not the current page's context.
+
+What happens if a route doesn't have a break statement?
+Without a break statement, the router might continue matching on the first regular expression even if it doesn't match, potentially causing unexpected routing behavior.
+
+How can a router be exposed globally in a JavaScript application?
+The router can be exposed through a global window object or by adding it to a global app object, making it accessible throughout the application.

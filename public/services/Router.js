@@ -20,12 +20,14 @@ export const Router = {
     for (const r of routes) {
       if (typeof r.path == "string" && r === routePath) {
         pageElement = new r.component();
+        break;
       } else if (r.path instanceof RegExp) {
         const match = r.path.exec(route);
         if (match) {
           pageElement = new r.component();
           const params = match.slice(1);
           pageElement.params = params;
+          break;
         }
       }
     }
@@ -34,7 +36,7 @@ export const Router = {
       pageElement = document.createElement("h1");
       pageElement.textContent = "Page Not Found!";
     } else {
-      document.querySelector("main").innerHTML = "";
+      document.querySelector("main").innerHTML = null;
       document.querySelector("main").appendChild(pageElement);
     }
   },

@@ -4,11 +4,16 @@ import "./components/HomePage.js";
 import "./components/LoadingWave.js";
 import "./components/MovieDetailsPage.js";
 import "./components/YoutubeEmbed.js";
+import { Router } from "./services/Router.js";
 // import { HomePage } from "./components/HomePage.js";
 
 // window.addEventListener("DOMContentLoaded", (event) => {
 //   document.querySelector("main").appendChild(new HomePage());
 // });
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  Router.init();
+});
 
 window.app = {
   search: (event) => {
@@ -17,4 +22,5 @@ window.app = {
     // TODO, make the api call here.
   },
   api: API,
+  Router,
 };

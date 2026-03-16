@@ -4,7 +4,7 @@ export class MovieDetailsPage extends HTMLElement {
   constructor(id) {
     super(); // must and first
     this.movie = null;
-    this.id = id || 12;
+    this.id = this.params || 12;
   }
 
   async render() {
