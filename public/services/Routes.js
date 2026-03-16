@@ -4,7 +4,7 @@ import { MoviePage } from "../components/MoviePage.js";
 
 export const routes = [
   {
-    path: "",
+    path: "/",
     component: HomePage,
   },
   {

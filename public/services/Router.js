@@ -18,7 +18,7 @@ export const Router = {
     const routePath = route.includes("?") ? route.split("?")[0] : route;
 
     for (const r of routes) {
-      if (typeof r.path == "string" && r === routePath) {
+      if (typeof r.path == "string" && r.path == routePath) {
         pageElement = new r.component();
         break;
       } else if (r.path instanceof RegExp) {
@@ -35,9 +35,8 @@ export const Router = {
     if (pageElement == null) {
       pageElement = document.createElement("h1");
       pageElement.textContent = "Page Not Found!";
-    } else {
-      document.querySelector("main").innerHTML = null;
-      document.querySelector("main").appendChild(pageElement);
     }
+    document.querySelector("main").innerHTML = null;
+    document.querySelector("main").appendChild(pageElement);
   },
 };

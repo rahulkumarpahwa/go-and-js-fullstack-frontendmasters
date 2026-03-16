@@ -4,7 +4,7 @@ export class MovieDetailsPage extends HTMLElement {
   constructor(id) {
     super(); // must and first
     this.movie = null;
-    this.id = this.params || 12;
+    this.id = null;
   }
 
   async render() {
@@ -58,6 +58,7 @@ export class MovieDetailsPage extends HTMLElement {
 
   //NOTE : this method will called once the code is parsed and mounted and WILL NOT BE CALLED AGAIN WHEN THE ATTRIBUTE CHANGES.
   connectedCallback() {
+    this.id = this.params[0];
     this.render();
   }
 }
