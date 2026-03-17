@@ -60,6 +60,13 @@ func main() {
 	server.HandleFunc("/api/movies/", movieHandler.GetMovieById)
 	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
 
+	catchAllClientRoutesHandler := func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./public/index.html")
+	}
+
+	// handling the client routes:
+	server.HandleFunc("/movies", catchAllClientRoutesHandler)
+	server.HandleFunc("/movies/", catchAllClientRoutesHandler)
 
 	// we are serving the static files such as the images, css and json file. This should be last route.
 	server.Handle("/", http.FileServer(http.Dir("./public")))

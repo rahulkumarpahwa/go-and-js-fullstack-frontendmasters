@@ -1,0 +1,14 @@
+Why does refreshing a specific page in a single-page application result in a 404 error?
+Because the server does not have a route defined for client-side routes, so when a new navigation is created directly to a specific URL, the server cannot handle the request.
+
+What are the two options for handling server-side routing in a single-page application?
+Option 1 is to make an HTTP redirect (301 or 302), and Option 2 is to deliver the index.html file for all client-side routes.
+
+Why do absolute references need to be updated in the HTML when implementing server-side routing for a single-page application?
+Because the server will return the index.html for any route, resources like CSS, JavaScript, and images need absolute paths (starting with /) to be correctly loaded from the root directory.
+
+What HTML element can help define the base path for relative links in a web application?
+The <base> HTML element, which defines the base URL for all relative links in a document, helping resolve references when using client-side routing.
+
+How does a single-page application handle routing when the server forwards all routes to index.html?
+The index.html loads the application, which initializes the router. The router then verifies the requested URL and renders the appropriate component based on the route.
