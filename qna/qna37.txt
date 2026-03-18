@@ -1,0 +1,14 @@
+What is the View Transitions API?
+A browser API that allows creating animated transitions between different DOM states, enabling smooth page changes by taking screenshots of the current and new interface and animating the transition.
+
+How do you implement a basic View Transition?
+Use document.startViewTransition() with a callback function, set CSS view-transition-name on old and new elements, and let the browser handle the animation between states.
+
+What browser compatibility considerations exist for the View Transitions API?
+The API is supported in latest versions of Safari, Chrome, and Firefox, with about 84% browser support. It's recommended to provide a fallback for browsers that don't support the feature.
+
+What are the two types of View Transitions?
+Single Page Application (SPA) transitions and Cross Document transitions, which allow animated changes within a single page or between different page loads.
+
+How can you customize View Transitions?
+By using CSS properties to define specific transition behaviors, such as animating particular images or elements between states, without always requiring JavaScript.
