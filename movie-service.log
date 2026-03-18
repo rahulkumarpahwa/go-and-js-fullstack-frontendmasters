@@ -282,3 +282,10 @@ ERROR: 2026/03/17 06:15:17 logger.go:35: Failed to scan movie row: sql: Scan err
 ERROR: 2026/03/17 06:15:17 logger.go:35: Get Random Movies Not found error : sql: Scan error on column index 4, name "release_year": converting NULL to int is unsupported
 ERROR: 2026/03/17 06:15:19 logger.go:35: JSON Enconding error : write tcp 127.0.0.1:8080->127.0.0.1:64093: wsasend: An established connection was aborted by the software in your host machine.
 ERROR: 2026/03/17 06:17:44 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ERROR: 2026/03/18 09:28:03 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "undefined": invalid syntax
+ERROR: 2026/03/18 19:33:39 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "undefined": invalid syntax
+ERROR: 2026/03/18 19:35:23 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "undefined": invalid syntax
+ERROR: 2026/03/18 19:54:22 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax
+ERROR: 2026/03/18 19:54:28 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax
+ERROR: 2026/03/18 19:54:38 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax
+ERROR: 2026/03/18 19:55:23 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax

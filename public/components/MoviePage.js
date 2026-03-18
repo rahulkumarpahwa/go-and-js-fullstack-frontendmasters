@@ -1,84 +1,49 @@
 import { API } from "../services/api.js";
+import { MovieItem } from "./MovieItem.js";
 
 export class MoviePage extends HTMLElement {
   constructor() {
     super();
-    this.movies = null;
   }
 
-  async render() {
-    try {
-      const searchParams = new URLSearchParams(window.location.search);
-      const movies = await API.searchMovies(
-        searchParams.get("name"),
-        searchParams.get("order") ?? "",
-        searchParams.get("genre ") ?? "",
-      );
-      this.movies = movies;
-    } catch (error) {
-      console.log(error);
-      alert("Movie does not Exist!");
-      return;
-    }
+  async render(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const order = urlParams.get("order") ?? "";
+    const genre = urlParams.get("genre") ?? "";
 
-    const movieDetailsTemplate = document.getElementById(
-      "template-movie-details",
-    );
+    const movies = await API.searchMovies(name, order, genre);
 
-    if (this.movies) {
-      this.movies.forEach((movie) => {
-        const content = movieDetailsTemplate.content.cloneNode(true);
-        content.querySelector("h2").textContent = movie.title;
-        content.querySelector("h3").textContent = movie.tagline;
-        content.querySelector("img").src = movie.poster_url;
-        content.querySelector("#trailer").dataset.url = movie.trailer_url; // we are setting the trailer url after the template is injected in the DOM so we will get it in the connectedCallback to use the value of data-url we set here.
-        content.querySelector("#overview").textContent = movie.overview;
-        content.querySelector("#metadata").innerHTML = `
-        <dt>Release Year</dt>
-        <dd>${movie.release_year}</dd>
-        <dt>Score</dt>
-        <dd>${movie.score} / 10</dd>
-        <dt>Popularity</dt>
-        <dd>${movie.popularity.toFixed(2)}</dd>
-        `;
-
-        const ulGenres = content.querySelector("#genres");
-        ulGenres.innerHTML = "";
-        if (movie.genres) {
-          movie.genres.forEach((genre) => {
-            const li = document.createElement("li");
-            li.textContent = genre.name;
-            ulGenres.appendChild(li);
-          });
-        }
-
-        const ulCast = content.querySelector("#cast");
-        ulCast.innerHTML = "";
-        if (movie.casting) {
-          movie.casting.forEach((actor) => {
-            const li = document.createElement("li");
-            li.innerHTML = `
-         <img src="${actor.image_url ?? "/images/generic_actor.jpg"}" alt="Picture of  ${actor.first_name} ${actor.last_name}" />
-        <p>${actor.first_name} ${actor.last_name}</p>
-        `;
-            ulCast.appendChild(li);
-          });
-        }
-
-        this.appendChild(content);
+    const ulMovies = this.querySelector("ul");
+    ulMovies.innerHTML = "";
+    if (movies && movies.length > 0) {
+      movies.forEach((movie) => {
+        const li = document.createElement("li");
+        li.appendChild(new MovieItem(movie));
+        ulMovies.appendChild(li);
       });
-      return;
     } else {
-      window.app.showError("Movies Can't be Found!");
-      document.querySelector("input[type='search']").value = "";
-      // const h1 = document.createElement("h1");
-      // h1.textContent = "Movies Can't be Found!";
-      // this.appendChild(h1);
+      ulMovies.innerHTML = "<h3>There are no movies with your search</h3>";
     }
+
+    //await this.loadGenres();
+
+    if (order) this.querySelector("#order").value = order;
+    if (genre) this.querySelector("#filter").value = genre;
   }
 
   connectedCallback() {
-    this.render();
+    const template = document.getElementById("template-movies");
+    const content = template.content.cloneNode(true);
+    this.appendChild(content);
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const name = searchParams.get("name");
+    if (name) {
+      this.querySelector("h2").textContent = ` '${name}' movies`;
+      this.render(name);
+    } else {
+      app.showError();
+    }
   }
 }
 

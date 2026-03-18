@@ -1,0 +1,14 @@
+How do you parse query parameters in a web browser?
+Use the URLSearchParams browser API, which allows extracting individual parameters from the location.search string
+
+What is the standard query parameter name for search queries?
+'q' is a standard practice for query parameters, though other names like 'query', 'search', or 'keywords' can also be used
+
+What happens if no search query is provided?
+The application will typically show an error message or prevent performing a search when the query parameter is empty
+
+How do you prevent a function from being passed as an argument accidentally?
+Call the function before passing its result, or use .toString() to explicitly convert the value to a string
+
+What browser API helps in reading URL parameters?
+URLSearchParams API, which can parse the location.search string and extract individual query parameters
