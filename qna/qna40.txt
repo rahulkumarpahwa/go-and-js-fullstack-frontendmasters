@@ -1,0 +1,17 @@
+What is the difference between the target and currentTarget properties in event handling?
+target is the actual element being clicked, while currentTarget is the element where the event listener is attached. In a document-wide event listener, target shows the specific clicked element, and currentTarget represents the entire document.
+
+Why is preventDefault() important when handling link clicks?
+Using preventDefault() stops the default browser navigation behavior, preventing automatic URL changes and potential unintended page redirects when clicking on links.
+
+How can you add an event listener to the entire document?
+You can use document.addEventListener('click', function(event) { ... }) to listen for clicks across the entire document, which allows checking the clicked element's properties using the event object.
+
+In HTML event attributes, how is the event object accessed?
+In HTML event attributes, the event object is implicitly available and can be used directly without explicitly passing it as an argument. It is always named 'event' in that specific context of execution.
+
+What are some ways to handle dynamic link navigation in a web application?
+
+
+What are some ways to handle dynamic link navigation in a web application?
+Options include: manually calling preventDefault() on links, using a router enhancement method after page injection, implementing DOM observers to re-run link handling, or adding a document-wide click event listener to manage navigation.
