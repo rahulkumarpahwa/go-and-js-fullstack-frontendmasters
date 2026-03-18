@@ -20,8 +20,28 @@ window.app = {
     event.preventDefault();
     const q = document.querySelector("input[type='search']").value;
     window.q = q;
-    Router.go("/movies")
+    Router.go("/movies");
   },
   api: API,
   Router,
+  showError: (message = "there is some Error", goToHome = true) => {
+    document.getElementById("alert-modal").showModal();
+    document.querySelector("#alert-modal p").textContent = message;
+    if (goToHome) {
+      Router.go("/");
+    }
+  },
+
+  closeError: () => {
+    document.getElementById("alert-modal").close();
+  },
 };
+
+const modal = document.getElementById("alert-modal");
+modal.addEventListener("keydown", (e) => {
+  if (e.key == "Escape") {
+    console.log("Escape Key Pressed!");
+
+    app.closeError();
+  }
+});

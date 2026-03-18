@@ -1,0 +1,14 @@
+What HTML element is used to create a native browser dialog without using web components?
+The <dialogue> element
+
+What method is used to display a native browser dialog?
+showModal() method
+
+How can you change the text content of an element in a dialog?
+Using textContent property, such as: elementName.textContent = message
+
+What CSS property is used to create a blur effect behind a dialog?
+backdrop-filter property
+
+What keyboard key typically closes a native browser dialog by default?
+Escape (ESC) key

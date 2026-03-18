@@ -36,6 +36,12 @@
       <home-page></home-page> -->
     </main>
 
+    <dialog id="alert-modal">
+      <h3>Error</h3>
+      <p>There is an Error, loading on the page</p>
+      <button onclick="app.closeError()">OK</button>
+    </dialog>
+
     <!-- this template will be parsed by the browser but not rendered. we will use the js to get in the web component.-->
     <template id="template-home">
       <section class="vertical-scroll" id="top-10">
