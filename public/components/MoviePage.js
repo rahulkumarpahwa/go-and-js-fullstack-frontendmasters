@@ -9,7 +9,11 @@ export class MoviePage extends HTMLElement {
   async render() {
     try {
       const searchParams = new URLSearchParams(window.location.search);
-      const movies = await API.searchMovies(searchParams.get("name"));
+      const movies = await API.searchMovies(
+        searchParams.get("name"),
+        searchParams.get("order") ?? "",
+        searchParams.get("genre ") ?? "",
+      );
       this.movies = movies;
     } catch (error) {
       console.log(error);
@@ -63,6 +67,7 @@ export class MoviePage extends HTMLElement {
 
         this.appendChild(content);
       });
+      return;
     } else {
       window.app.showError("Movies Can't be Found!");
       document.querySelector("input[type='search']").value = "";

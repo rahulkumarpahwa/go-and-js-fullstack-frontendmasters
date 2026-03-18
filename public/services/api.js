@@ -10,9 +10,7 @@ export const API = {
   getMovieById: async (id) => {
     return await API.fetch(`movies/${id}`);
   },
-  searchMovies: async (name, order = "", genre = "") => {
-    console.log(name, order, genre);
-
+  searchMovies: async (name, order, genre) => {
     return await API.fetch(`movies/search`, { name, order, genre });
   },
   getGenres: async () => {
@@ -22,7 +20,6 @@ export const API = {
   fetch: async (ServiceWorker, args) => {
     try {
       const queryString = args ? new URLSearchParams(args).toString() : "";
-      console.log(queryString);
 
       const response = await fetch(
         API.baseURL + ServiceWorker + "?" + queryString,
