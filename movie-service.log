@@ -289,3 +289,5 @@ ERROR: 2026/03/18 19:54:22 logger.go:35: Error in the genre id Conversion to Int
 ERROR: 2026/03/18 19:54:28 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax
 ERROR: 2026/03/18 19:54:38 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax
 ERROR: 2026/03/18 19:55:23 logger.go:35: Error in the genre id Conversion to Int : strconv.Atoi: parsing "null": invalid syntax
+ERROR: 2026/03/19 19:45:36 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ERROR: 2026/03/19 19:48:00 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.

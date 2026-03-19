@@ -1,0 +1,14 @@
+What library is commonly used in Go for hashing passwords?
+bcrypt
+
+In the user model, what metadata is added to struct fields using backticks?
+JSON metadata with field names for database and JSON serialization
+
+What are the primary methods that need to be implemented for account management in the backend?
+Registration, authentication, get account details, and save collection
+
+What steps are performed during user registration in the account repository?
+Validate input data, 2. Check if user already exists, 3. Hash the password, 4. Insert new user into the database
+
+What conversion is required when hashing a password using bcrypt?
+Convert the password string to a slice of bytes
