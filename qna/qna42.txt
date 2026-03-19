@@ -1,0 +1,15 @@
+What are the two types of collections that users can have in the database?
+Favorites and watchlist
+
+
+What is the primary security measure for storing passwords in this application?
+Hashing passwords instead of storing them in plain text
+
+How can a system verify a user's password if the original password cannot be retrieved?
+By hashing the entered password and comparing it to the stored hash
+
+What is the login identifier that will be used in this application?
+Email
+
+What are the key database fields for a user account?
+ID, name, email, hashed password, last login, time created, time confirmed, time deleted
