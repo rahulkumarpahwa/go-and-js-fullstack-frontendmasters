@@ -1,0 +1,18 @@
+How is the genre data populated in the select element?
+By calling an asynchronous API method (API.getGenres()) and dynamically creating option elements for each genre, with the genre ID as the value and genre name as the text content
+
+
+What method is used to add genres to the select dropdown?
+Using document.createElement('option'), setting the option's value to the genre ID, setting textContent to the genre name, and then appending each option to the select element
+
+How do filtering and ordering work in the application?
+By adding arguments to the URL, which triggers a new navigation to the same route with updated parameters, and supports browser back button navigation
+
+
+How are default genre and order selections handled?
+By setting the select element's value programmatically based on URL parameters, which pre-selects the matching genre and order options
+
+What happens when changing a select element's value programmatically?
+Changing the value directly from JavaScript does not trigger the onChange event, unlike changing the value through user interaction
+
+

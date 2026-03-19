@@ -34,6 +34,18 @@ window.app = {
   closeError: () => {
     document.getElementById("alert-modal").close();
   },
+  searchOrderChange: (order) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get("name");
+    const genre = urlParams.get("genre") ?? "";
+    app.Router.go(`/movies?name=${name}&order=${order}&genre=${genre}`);
+  },
+  searchFilterChange: (genre) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get("name");
+    const order = urlParams.get("order") ?? "";
+    app.Router.go(`/movies?name=${name}&order=${order}&genre=${genre}`);
+  },
 };
 
 const modal = document.getElementById("alert-modal");

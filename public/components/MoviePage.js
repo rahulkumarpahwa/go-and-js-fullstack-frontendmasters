@@ -6,6 +6,18 @@ export class MoviePage extends HTMLElement {
     super();
   }
 
+  async loadGenres() {
+    const genres = await API.getGenres();
+    const select = document.querySelector("select#filter");
+    select.innerHTML = `<option> Filter By Genre</option>`;
+    genres.forEach((genre) => {
+      let option = document.createElement("option");
+      option.value = genre.id;
+      option.textContent = genre.name;
+      select.appendChild(option);
+    });
+  }
+
   async render(name) {
     const urlParams = new URLSearchParams(window.location.search);
     const order = urlParams.get("order") ?? "";
@@ -25,7 +37,7 @@ export class MoviePage extends HTMLElement {
       ulMovies.innerHTML = "<h3>There are no movies with your search</h3>";
     }
 
-    //await this.loadGenres();
+    await this.loadGenres();
 
     if (order) this.querySelector("#order").value = order;
     if (genre) this.querySelector("#filter").value = genre;
