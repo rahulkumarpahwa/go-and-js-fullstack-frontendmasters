@@ -1,0 +1,14 @@
+What is a recommended security practice when handling user authentication errors?
+Return a generic 'credentials are wrong' message instead of separate messages for non-existent user or incorrect password to prevent potential database enumeration and protect user privacy
+
+Why is it important to use SQL variables or arguments instead of string concatenation when querying user data?
+To prevent SQL injection attacks by safely parameterizing database queries and avoiding direct string insertion into SQL statements
+
+What steps are typically involved in verifying user login credentials?
+Check if email exists in database, 2. Hash the provided password, 3. Compare hashed password with stored hashed password, 4. Update last login timestamp if credentials are valid
+
+What precaution should be taken when adding a movie to a user's collection?
+Check if the movie already exists in the user's watch list or favorites to prevent duplicate entries
+
+How can additional security be implemented to prevent repeated login attempts?
+Implement login attempt tracking, such as blocking access after a certain number of failed attempts within a short time period
