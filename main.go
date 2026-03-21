@@ -51,6 +51,14 @@ func main() {
 		log.Fatal("Failed to create the Movie Respository", err)
 	}
 
+	// Initialise the Account Repository for Users
+	accountRepository, err := data.NewAccountRepository(db, logInstance)
+	if err != nil {
+		log.Fatal("Failed to create the Account Respository", err)
+	}
+
+	
+	
 	// movie handler instance
 	movieHandler := handlers.MovieHandler{Logger: logInstance, Storage: movieRepository}
 	server.HandleFunc("/api/movies/random", movieHandler.GetRandomMovies)
@@ -59,6 +67,10 @@ func main() {
 	server.HandleFunc("/api/movies/search", movieHandler.SearchMoviesByName)
 	server.HandleFunc("/api/movies/", movieHandler.GetMovieById)
 	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
+	
+	accountHandler := handlers.AccountHandler{Logger: logInstance, Storage: accountRepository}
+	server.HandleFunc("/api/acount/register", accountHandler.Register)
+	server.HandleFunc("/api/account/auth", accountHandler.Authenticate)
 
 	catchAllClientRoutesHandler := func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./public/index.html")

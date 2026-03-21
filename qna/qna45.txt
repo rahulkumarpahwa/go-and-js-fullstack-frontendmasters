@@ -1,0 +1,14 @@
+What is the primary purpose of handlers in this context?
+Handlers process HTTP requests, receive data from the client, interact with repositories, and send data back to the client
+
+What are the key steps for handling JSON data in the backend?
+Decode the JSON body, 2. Populate a corresponding request structure, 3. Call the storage/repository method, 4. Send an HTTP response back to the client
+
+What HTTP status codes are mentioned for different error scenarios?
+401 (Unauthorized) for authentication failures, 500 (Internal Server Error) for unexpected database or query errors
+
+What structures are typically created for request and response handling?
+Request structure to receive data (e.g., email, password), response structure to send data back (e.g., success boolean, optional message)
+
+What does marshalling and unmarshalling refer to in this context?
+Marshalling and unmarshalling involve converting data between JSON format and Go structures
