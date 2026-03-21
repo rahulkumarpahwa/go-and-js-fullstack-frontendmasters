@@ -107,7 +107,7 @@ func (h *AccountHandler) Authenticate(w http.ResponseWriter, r *http.Request) {
 	// Return success response
 	response := AuthResponse{
 		Success: success,
-		Message: "User registered successfully",
+		Message: "User authenticated successfully",
 	}
 
 	if err := h.writeJSONResponse(w, response); err == nil {

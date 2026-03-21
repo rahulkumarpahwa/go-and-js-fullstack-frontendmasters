@@ -1,0 +1,14 @@
+How can you verify the HTTP method in a Go handler?
+In the request parameter of the handler, you can check the method using the request object. You manually inspect the method and can choose to respond differently or return an error based on the HTTP method used.
+
+What does a 400 HTTP status code typically indicate?
+A 400 status code indicates a Bad Request, meaning the server cannot process the request due to invalid or malformed client-side input.
+
+What tool can be used to test HTTP endpoints without writing client code?
+Postman is a popular tool for testing HTTP endpoints. It allows sending requests with different methods, headers, and body formats, and viewing server responses.
+
+How is password security typically handled in user registration?
+Passwords are typically hashed before being stored in the database, which means the original password is transformed into a fixed-length string of characters that cannot be easily reversed.
+
+In Go's basic HTTP handling, how are different HTTP methods managed for the same URL?
+Manually, by checking the request method inside a single handler and responding differently based on the method, or by creating separate handlers for different methods and calling them conditionally.

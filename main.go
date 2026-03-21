@@ -69,7 +69,7 @@ func main() {
 	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
 	
 	accountHandler := handlers.AccountHandler{Logger: logInstance, Storage: accountRepository}
-	server.HandleFunc("/api/acount/register", accountHandler.Register)
+	server.HandleFunc("/api/account/register", accountHandler.Register)
 	server.HandleFunc("/api/account/auth", accountHandler.Authenticate)
 
 	catchAllClientRoutesHandler := func(w http.ResponseWriter, r *http.Request) {
