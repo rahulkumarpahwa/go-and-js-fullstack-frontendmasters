@@ -1,0 +1,14 @@
+What attribute should be used for password fields to prevent password managers from suggesting new passwords on the login screen?
+current-password
+
+How can HTML templates be loaded from an external file in web components?
+By using fetch() to retrieve the HTML text from an external file, then injecting the text into the component
+
+What are the key differences between a registration form and a login form?
+A login form typically has fewer fields (no name), only one password field, a 'Login' button instead of 'Register', and a link to the registration page for users without an account
+
+What path is used to define the login route in this application?
+/account/login
+
+How can HTML templates be referenced when using web components?
+Templates can be read directly from the DOM or fetched from an external HTML file using JavaScript's fetch method
