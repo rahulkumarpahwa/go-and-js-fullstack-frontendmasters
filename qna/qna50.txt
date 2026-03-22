@@ -1,0 +1,14 @@
+What method can be used to prevent a form from reloading the page during submission?
+event.preventDefault() can be used to stop the default form submission behavior and prevent page reload
+
+What header is recommended when sending JSON data in an HTTP request?
+Content-Type: application/json, which tells the server that the request body is in JSON format
+
+What are some basic client-side validation techniques?
+Check name length, password length, email format, password match, and store validation errors in an array. Join the error array to create a single error message string
+
+How can you quickly get an element by ID in JavaScript using a shorthand method?
+Use document.gEBI() or create a custom shorthand like $ = document.getElementById
+
+Why is client-side validation not sufficient for securing form submissions?
+Client-side validation can be bypassed by a bad actor, so server-side validation is also necessary to ensure data integrity and security

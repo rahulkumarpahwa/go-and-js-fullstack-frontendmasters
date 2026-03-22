@@ -47,8 +47,37 @@ window.app = {
     app.Router.go(`/movies?name=${name}&order=${order}&genre=${genre}`);
   },
 
-  register: () => {},
-  login: () => {},
+  register: async (event) => {
+    event.preventDefault();
+    const name = document.getElementById("register-name").value;
+    const email = document.getElementById("register-email").value;
+    const password = document.getElementById("register-password").value;
+    const passwordConfirmation = document.getElementById(
+      "register-password-confirmation",
+    ).value;
+
+    const errors = [];
+    if (name.length < 4) errors.push("Enter your Complete Name!");
+    if (password.length < 7)
+      errors.push("Enter a paaword with at least 7 characters!");
+    if (email.length < 4) errors.push("Enter your Complete Email!");
+    if (password !== passwordConfirmation)
+      errors.push("Passwords don't match!");
+
+    if (errors.length == 0) {
+      const response = API.register(name, email, password);
+      if (response.success) {
+        app.Router.go("/account/");
+      } else {
+        app.showError(response.message);
+      }
+    } else {
+      app.showError(errors.join("\n"));
+    }
+  },
+  login: async (event) => {
+    event.preventDefault();
+  },
 };
 
 const modal = document.getElementById("alert-modal");
