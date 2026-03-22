@@ -5,6 +5,7 @@ import "./components/LoadingWave.js";
 import "./components/MovieDetailsPage.js";
 import "./components/YoutubeEmbed.js";
 import { Router } from "./services/Router.js";
+import { proxiedStore } from "./services/Store.js";
 // import { HomePage } from "./components/HomePage.js";
 
 // window.addEventListener("DOMContentLoaded", (event) => {
@@ -23,6 +24,7 @@ window.app = {
   },
   api: API,
   Router,
+  Store: proxiedStore,
   showError: (message = "there is some Error", goToHome = false) => {
     document.getElementById("alert-modal").showModal();
     document.querySelector("#alert-modal p").textContent = message;
@@ -67,6 +69,7 @@ window.app = {
     if (errors.length == 0) {
       const response = await API.register(name, email, password);
       if (response.success === true) {
+        window.app.Store.jwt = response.jwt;
         Router.go("/account/");
       } else {
         app.showError(response.message);
@@ -88,6 +91,7 @@ window.app = {
     if (errors.length == 0) {
       const response = await API.login(email, password);
       if (response.success) {
+        window.app.Store.jwt = response.jwt;
         Router.go("/account/");
       } else {
         app.showError(response.message);

@@ -342,3 +342,4 @@ ERROR: 2026/03/22 18:51:43 logger.go:35: Failed to decode authentication request
 ERROR: 2026/03/22 18:52:25 logger.go:35: Failed to decode authentication request: EOF
 ERROR: 2026/03/22 19:01:36 logger.go:35: Failed to decode authentication request: EOF
 ERROR: 2026/03/22 19:02:54 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 22:37:58 logger.go:35: User already exists with email: john@gmail.com: user already exists

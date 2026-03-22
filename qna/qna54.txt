@@ -1,0 +1,14 @@
+What is a Proxy in JavaScript and what design pattern does it represent?
+A Proxy is a design pattern and JavaScript implementation that allows wrapping an object with another object to create a public interface, enabling additional functionality like event handling and modification tracking when interacting with the original object.
+
+What are the key characteristics of local storage in web browsers?
+Local storage is a client-side key-value storage where both keys and values are strings, limited to approximately 5 megabytes per origin. WebKit-based browsers use UTF-16 encoding, which effectively reduces the storage to about 2 megabytes.
+
+How can you determine if a user is logged in using a JWT token?
+By checking if the JWT token is not null. However, to definitively verify token validity, a request must be made to the server, as only the server can fully validate and open the token package.
+
+What methods can be used to store authentication tokens client-side?
+Tokens can be stored in client-side storage mechanisms such as local storage, index DB, or other browser storage options that allow later retrieval and access.
+
+What is the significance of returning 'true' in a Proxy setter method?
+Returning 'true' in a Proxy setter method is mandatory and indicates that the value change has been managed and processed successfully, allowing the modification to proceed.
