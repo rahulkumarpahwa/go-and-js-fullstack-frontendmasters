@@ -1,6 +1,7 @@
 import { HomePage } from "../components/HomePage.js";
 import { MovieDetailsPage } from "../components/MovieDetailsPage.js";
 import { MoviePage } from "../components/MoviePage.js";
+import { RegisterPage } from "../components/RegisterPage.js";
 
 export const routes = [
   {
@@ -14,5 +15,9 @@ export const routes = [
   {
     path: "/movies", // for search results, we will create later.
     component: MoviePage,
+  },
+  {
+    path: "/account/register",
+    component: RegisterPage,
   },
 ];

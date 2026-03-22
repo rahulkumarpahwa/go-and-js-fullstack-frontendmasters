@@ -1,0 +1,14 @@
+What method is used to define a web component?
+Use customElements.define() to define the web component
+
+Why might you need to explicitly set an input type to 'text'?
+CSS styles might be specifically targeting input types, so without explicit type, styles may not apply
+
+What callback method is typically used when creating a web component?
+connectedCallback() is used to set up the web component when it is added to the document
+
+What method allows a label to create an interactive focus on an input element?
+Using the 'for' attribute in the label that matches the input's ID creates a clickable focus area
+
+How does the browser handle unclosed HTML tags?
+The browser attempts to 'do its best' and will often automatically close tags, but it's recommended to explicitly close tags to ensure predictable rendering
