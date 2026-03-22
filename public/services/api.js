@@ -17,17 +17,17 @@ export const API = {
     return await API.fetch("genres");
   },
   register: async (name, email, password) => {
-    return await API.send("/account/register", { name, email, password });
+    return await API.send("account/register", { name, email, password });
   },
   login: async (email, password) => {
-    return await API.send("/account/auth", { email, password });
+    return await API.send("account/auth", { email, password });
   },
   send: async (serviceName, data) => {
     try {
       const response = await fetch(API.baseURL + serviceName, {
         method: "POST",
         headers: {
-          "Content-Type ": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });

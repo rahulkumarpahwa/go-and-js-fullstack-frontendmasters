@@ -23,7 +23,7 @@ window.app = {
   },
   api: API,
   Router,
-  showError: (message = "there is some Error", goToHome = true) => {
+  showError: (message = "there is some Error", goToHome = false) => {
     document.getElementById("alert-modal").showModal();
     document.querySelector("#alert-modal p").textContent = message;
     if (goToHome) {
@@ -53,21 +53,21 @@ window.app = {
     const email = document.getElementById("register-email").value;
     const password = document.getElementById("register-password").value;
     const passwordConfirmation = document.getElementById(
-      "register-password-confirmation",
+      "register-password-confirm",
     ).value;
 
     const errors = [];
     if (name.length < 4) errors.push("Enter your Complete Name!");
     if (password.length < 7)
-      errors.push("Enter a paaword with at least 7 characters!");
+      errors.push("Enter a password with at least 7 characters!");
     if (email.length < 4) errors.push("Enter your Complete Email!");
     if (password !== passwordConfirmation)
       errors.push("Passwords don't match!");
 
     if (errors.length == 0) {
-      const response = API.register(name, email, password);
-      if (response.success) {
-        app.Router.go("/account/");
+      const response = await API.register(name, email, password);
+      if (response.success === true) {
+        Router.go("/account/");
       } else {
         app.showError(response.message);
       }
@@ -77,6 +77,24 @@ window.app = {
   },
   login: async (event) => {
     event.preventDefault();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    const errors = [];
+    if (password.length < 7)
+      errors.push("Enter a password with at least 7 characters!");
+    if (email.length < 4) errors.push("Enter your Complete Email!");
+
+    if (errors.length == 0) {
+      const response = await API.login(email, password);
+      if (response.success) {
+        Router.go("/account/");
+      } else {
+        app.showError(response.message);
+      }
+    } else {
+      app.showError(errors.join("\n"));
+    }
   },
 };
 

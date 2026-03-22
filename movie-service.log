@@ -333,3 +333,12 @@ ERROR: 2026/03/21 19:07:03 logger.go:35: Server failed to start : listen tcp :80
 ERROR: 2026/03/21 19:07:18 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 ERROR: 2026/03/21 19:07:22 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 ERROR: 2026/03/21 19:07:55 logger.go:35: Server failed to start : listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ERROR: 2026/03/22 18:40:17 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 18:43:05 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 18:47:02 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 18:47:05 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 18:47:07 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 18:51:43 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 18:52:25 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 19:01:36 logger.go:35: Failed to decode authentication request: EOF
+ERROR: 2026/03/22 19:02:54 logger.go:35: Failed to decode authentication request: EOF

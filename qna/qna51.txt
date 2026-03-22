@@ -1,0 +1,16 @@
+What happens when two login methods are defined in a JSON object?
+The second login method replaces the first one, which can cause the login functionality to stop working
+
+What is the default behavior of the showError method when displaying an error?
+By default, it navigates to the home page after showing the error
+
+What client-side validation is implemented for password creation?
+A password must be at least 7 characters long
+
+What error message is displayed when authentication fails?
+"Authentication failed" is shown for both incorrect email and incorrect password scenarios
+
+How does the registration validation handle multiple errors?
+The validation can collect and display multiple error messages simultaneously, such as password length and password confirmation issues
+
+
