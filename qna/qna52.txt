@@ -1,0 +1,16 @@
+NOTE : JWT payloads are not encrypted, just Base64Url encoded and readable by anyone. The signature only ensures tamper-proofing.
+
+What is a JSON Web Token (JWT)?
+A standard specification that allows storing secure data client-side, which can only be decrypted by the server using a private key. It acts like a secure credential that contains encrypted information and has an expiration time.
+
+Why are JSON Web Tokens considered a secure authentication method?
+JSON Web Tokens are secure because the data inside can only be decrypted by the server with a private key, preventing unauthorized access to the token's contents.
+
+What is a key characteristic of JWT expiration?
+JWT tokens have a configurable expiration time that can range from minutes to days, after which a new token must be requested to maintain authentication.
+
+What is a potential security risk with JSON Web Tokens?
+If a JWT is stolen or hijacked, an unauthorized person could potentially access the authenticated session until the token expires, which is why short expiration times are recommended.
+
+How does a JSON Web Token function similarly to a hotel keycard?
+Like a hotel keycard, a JWT serves as a credential that can be presented to gain access to specific resources, without the bearer necessarily being able to read or decrypt its contents.
