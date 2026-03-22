@@ -1,0 +1,17 @@
+What is JWT (JSON Web Token) and how does it work in authentication?
+JWT is an encrypted token containing claims (user data) that can be securely transmitted between client and server. It allows storing user information like email and ID in an encrypted format that cannot be tampered with without detection, providing a secure way to maintain user authentication state.
+
+
+What key information is typically stored in a JWT claim?
+A typical JWT claim includes user identification details such as user ID, email address, name, and an expiration timestamp. These claims are encrypted using a secret key known only to the server, preventing unauthorized modification.
+
+
+
+Why is the JWT secret key important in token authentication?
+The JWT secret key is crucial because it is used to encrypt and decrypt tokens. If an attacker gains access to the secret key, they could potentially forge or modify tokens, compromising the authentication system's security.
+
+How long is a typical JWT token valid?
+In the example discussed, the JWT token is set to be valid for 72 hours (3 days). The expiration time can be configured based on security requirements and is typically set in Unix timestamp format.
+
+What makes JWT more secure than simple client-side data storage?
+JWT is more secure because the token is encrypted with a secret key, preventing client-side manipulation. If a user attempts to modify the token's contents, the server will detect the tampering during decryption, thus rejecting the token.

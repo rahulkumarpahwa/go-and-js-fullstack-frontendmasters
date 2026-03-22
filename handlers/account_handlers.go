@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"rahulkumarpahwa.me/go-and-js-fullstack/models"
+	"rahulkumarpahwa.me/go-and-js-fullstack/token"
+
 	"rahulkumarpahwa.me/go-and-js-fullstack/data"
 	"rahulkumarpahwa.me/go-and-js-fullstack/logger"
 )
@@ -24,6 +27,7 @@ type AuthRequest struct {
 type AuthResponse struct {
 	Success bool   `json:"success"`
 	Message string `json:"message"`
+	JWT     string `json:"jwt"`
 }
 
 type AccountHandler struct {
@@ -82,6 +86,7 @@ func (h *AccountHandler) Register(w http.ResponseWriter, r *http.Request) {
 	response := AuthResponse{
 		Success: success,
 		Message: "User registered successfully",
+		JWT:     token.CreateJWT(models.User{Name: req.Name, Email: req.Email, Password: req.Password}, *h.Logger),
 	}
 
 	if err := h.writeJSONResponse(w, response); err == nil {
@@ -108,6 +113,7 @@ func (h *AccountHandler) Authenticate(w http.ResponseWriter, r *http.Request) {
 	response := AuthResponse{
 		Success: success,
 		Message: "User authenticated successfully",
+		JWT:     token.CreateJWT(models.User{Email: req.Email}, *h.Logger),
 	}
 
 	if err := h.writeJSONResponse(w, response); err == nil {
