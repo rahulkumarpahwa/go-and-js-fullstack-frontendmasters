@@ -57,8 +57,6 @@ func main() {
 		log.Fatal("Failed to create the Account Respository", err)
 	}
 
-	
-	
 	// movie handler instance
 	movieHandler := handlers.MovieHandler{Logger: logInstance, Storage: movieRepository}
 	server.HandleFunc("/api/movies/random", movieHandler.GetRandomMovies)
@@ -67,7 +65,7 @@ func main() {
 	server.HandleFunc("/api/movies/search", movieHandler.SearchMoviesByName)
 	server.HandleFunc("/api/movies/", movieHandler.GetMovieById)
 	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
-	
+
 	accountHandler := handlers.AccountHandler{Logger: logInstance, Storage: accountRepository}
 	server.HandleFunc("/api/account/register", accountHandler.Register)
 	server.HandleFunc("/api/account/auth", accountHandler.Authenticate)
@@ -79,6 +77,7 @@ func main() {
 	// handling the client routes:
 	server.HandleFunc("/movies", catchAllClientRoutesHandler)
 	server.HandleFunc("/movies/", catchAllClientRoutesHandler)
+	server.HandleFunc("/account/", catchAllClientRoutesHandler)
 
 	// we are serving the static files such as the images, css and json file. This should be last route.
 	server.Handle("/", http.FileServer(http.Dir("./public")))

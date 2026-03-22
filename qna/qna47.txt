@@ -1,0 +1,14 @@
+What are two important attributes to include in an input label for accessibility?
+The 'for' attribute and the associated input ID are important for screen readers, usability, and to focus the input when the label is clicked
+
+What HTML attribute can help mobile devices activate the correct keyboard type?
+The 'type' attribute, such as 'type="email"', which helps activate the email keyboard with special symbols like @ on mobile devices
+
+What is the purpose of the 'autocomplete' attribute in password inputs?
+The 'autocomplete' attribute helps password managers suggest new passwords and understand the context of the input, such as 'new-password' for registration forms
+
+Why is it important to prevent the default form submission behavior?
+To prevent the browser from submitting the form traditionally and instead allow the web application to handle form submission programmatically
+
+What HTML input types provide built-in masking for sensitive information?
+The 'type="password"' input type automatically masks characters with asterisks or dots when typing

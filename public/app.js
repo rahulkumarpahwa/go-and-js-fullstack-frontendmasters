@@ -46,6 +46,9 @@ window.app = {
     const order = urlParams.get("order") ?? "";
     app.Router.go(`/movies?name=${name}&order=${order}&genre=${genre}`);
   },
+
+  register: () => {},
+  login: () => {},
 };
 
 const modal = document.getElementById("alert-modal");
