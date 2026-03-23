@@ -1,0 +1,14 @@
+What is a middleware in the context of web development?
+A middleware is a design pattern where a piece of software is placed between two components, such as between an HTTP handler and a multiplexer, to perform tasks like authentication, data validation, or logging before passing the request to the next component in the pipeline.
+
+How does a middleware interact with the request context in Go?
+A middleware can add data to the request context, which acts like a bag or dictionary that passes through multiple middleware layers. This allows middleware to store and pass information, such as decrypted JWT email, to subsequent middleware and handlers.
+
+What is the primary advantage of using JSON Web Tokens (JWT) over traditional session tokens?
+JWT allows data to be saved client-side while remaining encrypted, eliminating the need for server-side storage of session data. This reduces server resource usage, particularly beneficial when dealing with millions of users, as no memory, database, or file system resources are needed to store user-specific data.
+
+What happens in a middleware if an authentication token is invalid?
+If a middleware detects an invalid token, it can stop the request processing by sending an error response (such as a 401 Unauthorized status) to the response writer, preventing the request from reaching the next handler in the pipeline.
+
+How do middlewares handle request processing in a typical web application?
+Middlewares form a pipeline where each middleware receives a request, can perform operations like authentication or logging, optionally modify the context, and then pass the request to the next middleware until it reaches the final handler.
