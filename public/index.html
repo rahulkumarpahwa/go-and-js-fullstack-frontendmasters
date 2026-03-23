@@ -186,6 +186,21 @@
       </section>
     </template>
 
+    <!-- template for the AccountPage.js -->
+    <template id="template-account">
+      <section id="account">
+        <h2>You are Logged In</h2>
+        <button onclick="app.logout()">Log out</button>
+        <button onclick="app.Router.go('/account/favorites')">
+          Your Favorites
+        </button>
+        <button onclick="app.Router.go('/account/watchlist')">
+          Your Watchlist
+        </button>
+      </section>
+    </template>
+
+    
     <footer>
       <p>Copyright &copy; Reeling It 2026-27</p>
     </footer>

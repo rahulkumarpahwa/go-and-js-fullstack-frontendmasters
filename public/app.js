@@ -100,6 +100,11 @@ window.app = {
       app.showError(errors.join("\n"));
     }
   },
+
+  logout: () => {
+    app.Store.jwt = null;
+    Router.go("/");
+  },
 };
 
 const modal = document.getElementById("alert-modal");

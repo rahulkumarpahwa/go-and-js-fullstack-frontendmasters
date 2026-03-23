@@ -1,0 +1,14 @@
+What are the key components added to the account page template?
+The account page includes an H1 header saying 'you are logged in', buttons for log out, links to favorites and watch list, and actions for authenticated users
+
+What is the client-side approach to logging out?
+Logging out involves removing the JWT from storage, deleting credentials, and redirecting the user to another page like home
+
+What routing configuration is needed for the account page?
+The route is configured with path: '/account/' and associated with the AccountPage component
+
+What potential issue exists when navigating to the account page after logging out?
+The router needs additional validation rules to check if a user is actually logged in before allowing access to certain pages
+
+What steps are needed to correctly set up the account page template?
+Ensure the template has the correct ID in the HTML file, create the component, define the route, and implement logout functionality
