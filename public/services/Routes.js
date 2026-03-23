@@ -21,6 +21,7 @@ export const routes = [
   {
     path: "/account/",
     component: AccountPage,
+    loggedIn: true,
   },
   {
     path: "/account/register",

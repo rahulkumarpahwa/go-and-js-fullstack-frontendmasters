@@ -22,12 +22,14 @@ export const Router = {
     }
 
     let pageElement = null;
+    let needsLogin = false;
 
     const routePath = route.includes("?") ? route.split("?")[0] : route;
 
     for (const r of routes) {
       if (typeof r.path == "string" && r.path == routePath) {
         pageElement = new r.component();
+        needsLogin = r.loggedIn === true;
         break;
       } else if (r.path instanceof RegExp) {
         const match = r.path.exec(route);
@@ -37,6 +39,14 @@ export const Router = {
           pageElement.params = params;
           break;
         }
+      }
+    }
+
+    // we will check here that page we are trying to access needs loggedIn or not!
+    if (pageElement) {
+      if (needsLogin && app.Store.loggedIn == false) {
+        Router.go("/account/login");
+        return;
       }
     }
 

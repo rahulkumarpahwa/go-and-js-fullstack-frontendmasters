@@ -1,0 +1,15 @@
+What property should be used to indicate that a route requires authentication?
+The 'logged in' property on the route object
+
+How can you determine if a user needs to be logged in for a specific route?
+Check if the route's 'logged in' property is set to true, and then verify the current login state
+
+What issue can occur when storing null values in local storage?
+Local storage saves null as a string ('null') instead of a true null value, which can cause unexpected authentication behavior
+
+
+What method can be used to remove an item from local storage?
+Use removeItem() method to delete a specific key from local storage
+
+What should happen if a user tries to access a route that requires authentication but is not logged in?
+Redirect the user to the login page and prevent access to the protected route
