@@ -270,6 +270,70 @@ func (r *AccountRepository) SaveCollection(user models.User, movieID int, collec
 	return true, nil
 }
 
+func (r *AccountRepository) RemoveFromCollection(user models.User, movieID int, collection string) (bool, error) {
+	// Validate inputs
+	if movieID <= 0 {
+		r.logger.Error("SaveCollection failed: invalid movie ID", nil)
+		return false, errors.New("invalid movie ID")
+	}
+	if collection != "favorite" && collection != "watchlist" {
+		r.logger.Error("SaveCollection failed: invalid collection type", nil)
+		return false, errors.New("collection must be 'favorite' or 'watchlist'")
+	}
+
+	// Get user ID from email
+	var userID int
+	err := r.db.QueryRow(`
+		SELECT id 
+		FROM users 
+		WHERE email = $1 AND time_deleted IS NULL
+	`, user.Email).Scan(&userID)
+	if err == sql.ErrNoRows {
+		r.logger.Error("User not found", nil)
+		return false, ErrUserNotFound
+	}
+	if err != nil {
+		r.logger.Error("Failed to query user ID", err)
+		return false, err
+	}
+
+	// Check if the relationship already exists
+	var exists bool
+	err = r.db.QueryRow(`
+		SELECT EXISTS(
+			SELECT 1 
+			FROM user_movies 
+			WHERE user_id = $1 
+			AND movie_id = $2 
+			AND relation_type = $3
+		)
+	`, userID, movieID, collection).Scan(&exists)
+	if err != nil {
+		r.logger.Error("Failed to check existing collection entry", err)
+		return false, err
+	}
+	if !exists {
+		r.logger.Info("Movie does not exist in" + collection + " for user")
+		return false, nil
+	}
+
+	// Insert the new relationship
+	query := `
+		DELETE FROM user_movies 
+			WHERE user_id = $1 
+			AND movie_id = $2 
+			AND relation_type = $3
+	`
+	_, err = r.db.Exec(query, userID, movieID, collection)
+	if err != nil {
+		r.logger.Error("Failed to delete movie from "+collection, err)
+		return false, err
+	}
+
+	r.logger.Info("Successfully deleted movie " + strconv.Itoa(movieID) + " from " + collection + " for user")
+	return true, nil
+}
+
 var (
 	ErrRegistrationValidation   = errors.New("registration failed")
 	ErrAuthenticationValidation = errors.New("authentication failed")

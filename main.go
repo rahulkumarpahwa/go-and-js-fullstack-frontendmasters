@@ -70,7 +70,7 @@ func main() {
 	server.HandleFunc("/api/account/register", accountHandler.Register)
 	server.HandleFunc("/api/account/auth", accountHandler.Authenticate)
 
-	// new routes for the getting favorites and watchlist and add to Collection. 
+	// new routes for the getting favorites and watchlist and add to Collection.
 	// Also, note that we are using the Handle() and not the handle func.
 	server.Handle("/api/account/favorites",
 		accountHandler.AuthMiddleware(http.HandlerFunc(accountHandler.GetFavorites)))
@@ -80,6 +80,9 @@ func main() {
 
 	server.Handle("/api/account/save-to-collection",
 		accountHandler.AuthMiddleware(http.HandlerFunc(accountHandler.SaveToCollection)))
+
+	server.Handle("/api/account/remove-from-collection",
+		accountHandler.AuthMiddleware(http.HandlerFunc(accountHandler.RemoveFromCollection)))
 
 	catchAllClientRoutesHandler := func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./public/index.html")

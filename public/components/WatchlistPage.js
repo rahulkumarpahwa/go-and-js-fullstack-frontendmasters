@@ -3,7 +3,7 @@ import { CollectionPage } from "./CollectionPage.js";
 
 export default class WatchlistPage extends CollectionPage {
   constructor() {
-    super(API.getWatchlist, "Movie Watchlist");
+    super(API.getWatchlist, "Movie Watchlist", "watchlist");
   }
 }
 customElements.define("watchlist-page", WatchlistPage);

@@ -34,6 +34,12 @@ export const API = {
       collection,
     });
   },
+  removeFromCollection: async (movie_id, collection) => {
+    return await API.send("account/remove-from-collection", {
+      movie_id,
+      collection,
+    });
+  },
   send: async (serviceName, data) => {
     try {
       const response = await fetch(API.baseURL + serviceName, {

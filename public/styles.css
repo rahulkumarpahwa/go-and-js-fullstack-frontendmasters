@@ -486,3 +486,9 @@ input[type=text],input[type=password],input[type=email] {
 
     
 }
+
+
+.collection-delete-button:hover{
+    color: white;
+    background-color: red;
+}
