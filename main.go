@@ -72,13 +72,13 @@ func main() {
 
 	// new routes for the getting favorites and watchlist and add to Collection. 
 	// Also, note that we are using the Handle() and not the handle func.
-	http.Handle("/api/account/favorites",
+	server.Handle("/api/account/favorites",
 		accountHandler.AuthMiddleware(http.HandlerFunc(accountHandler.GetFavorites)))
 
-	http.Handle("/api/account/watchlist",
+	server.Handle("/api/account/watchlist",
 		accountHandler.AuthMiddleware(http.HandlerFunc(accountHandler.GetWatchlist)))
 
-	http.Handle("/api/account/save-to-collection",
+	server.Handle("/api/account/save-to-collection",
 		accountHandler.AuthMiddleware(http.HandlerFunc(accountHandler.SaveToCollection)))
 
 	catchAllClientRoutesHandler := func(w http.ResponseWriter, r *http.Request) {

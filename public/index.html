@@ -18,9 +18,9 @@
       <nav>
         <ul>
           <li><a class="navlink" href="/">Movies</a></li>
-          <li><a class="navlink" href="/movies/123">Favorites</a></li>
-          <li><a class="navlink" href="">Watchlist</a></li>
-          <li><a class="navlink" href="">My Account</a></li>
+          <li><a class="navlink" href="/account/favorites">Favorites</a></li>
+          <li><a class="navlink" href="/account/watchlist">Watchlist</a></li>
+          <li><a class="navlink" href="/account/">My Account</a></li>
         </ul>
       </nav>
       <div>
@@ -72,8 +72,8 @@
           >
           <section id="actions">
             <dl id="metadata"></dl>
-            <button>Add to Favorites</button>
-            <button>Add to Watchlist</button>
+            <button id="btnFavorites">Add to Favorites</button>
+            <button id="btnWatchlist">Add to Watchlist</button>
           </section>
         </header>
         <ul id="genres"></ul>
@@ -200,7 +200,20 @@
       </section>
     </template>
 
-    
+    <!-- template for the CollectionPage.js which will show the favorites and watchlist -->
+    <template id="template-collection">
+      <section>
+        <ul id="movies-result">
+          <loading-wave
+            data-elements="5"
+            data-width="150px"
+            data-height="220px"
+          >
+          </loading-wave>
+        </ul>
+      </section>
+    </template>
+
     <footer>
       <p>Copyright &copy; Reeling It 2026-27</p>
     </footer>

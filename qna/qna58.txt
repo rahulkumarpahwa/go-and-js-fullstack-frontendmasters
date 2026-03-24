@@ -1,0 +1,14 @@
+How can you manually pass a JWT token in an API request?
+Add an Authorization header with the format 'Bearer [token]', and pass the token from the store or state management system. Check if the token exists before adding the header to avoid errors.
+
+What is the key difference between cookies and JWT tokens for authentication?
+Cookies are automatically passed to the server, while JWT tokens must be manually added to the request headers to be sent with each API call.
+
+What is the purpose of creating a base class for web components like CollectionPage?
+To create a reusable template with common functionality that can be inherited by specific page components like FavoritesPage and WatchlistPage, reducing code duplication and promoting code organization.
+
+How can web components leverage Object-Oriented Programming (OOP)?
+By creating base classes that define common behavior and then using subclasses to extend and specialize the functionality, allowing for modular and inheritable component design.
+
+What standard header is used for passing authentication tokens in API requests?
+The 'Authorization' header, typically formatted with the word 'Bearer' followed by a space and then the token, such as 'Authorization: Bearer [token]'.

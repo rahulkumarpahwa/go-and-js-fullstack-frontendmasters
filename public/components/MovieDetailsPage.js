@@ -36,6 +36,13 @@ export class MovieDetailsPage extends HTMLElement {
     <dd>${this.movie.popularity.toFixed(2)}</dd>
     `;
 
+    this.querySelector("#btnFavorites").addEventListener("click", () => {
+      window.app.saveToCollection(this.movie.id, "favorite");
+    });
+    this.querySelector("#btnWatchlist").addEventListener("click", () => {
+      window.app.saveToCollection(this.movie.id, "watchlist");
+    });
+
     const ulGenres = this.querySelector("#genres");
     ulGenres.innerHTML = "";
     this.movie.genres.forEach((genre) => {

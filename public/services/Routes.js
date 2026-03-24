@@ -1,9 +1,11 @@
 import { AccountPage } from "../components/AccountPage.js";
+import FavoritePage from "../components/FavoritePage.js";
 import { HomePage } from "../components/HomePage.js";
 import { LoginPage } from "../components/LoginPage.js";
 import { MovieDetailsPage } from "../components/MovieDetailsPage.js";
 import { MoviePage } from "../components/MoviePage.js";
 import { RegisterPage } from "../components/RegisterPage.js";
+import WatchlistPage from "../components/WatchlistPage.js";
 
 export const routes = [
   {
@@ -31,5 +33,16 @@ export const routes = [
   {
     path: "/account/login",
     component: LoginPage,
+  },
+
+  {
+    path: "/account/favorites",
+    component: FavoritePage,
+    loggedIn: true,
+  },
+  {
+    path: "/account/watchlist",
+    component: WatchlistPage,
+    loggedIn: true,
   },
 ];
