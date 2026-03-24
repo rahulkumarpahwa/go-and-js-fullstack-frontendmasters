@@ -1,0 +1,14 @@
+How can you ensure a route requires user authentication?
+By implementing a router system that automatically redirects unauthenticated users to the login page when accessing protected routes
+
+What is the primary consideration when adding event listeners to buttons in a web component template?
+Ensuring the event listener can access the necessary data, such as the movie ID, when handling button clicks
+
+What steps are needed to save a movie to a collection?
+First, verify the user is logged in, then send a request to the server with the movie ID and collection type, and finally redirect the user to the appropriate collection page
+
+Why is using querySelector with a specific CSS selector preferred over getElementById?
+It provides more specificity and flexibility, allowing you to target elements within a specific context and reduce the risk of ID conflicts
+
+What data is required when saving a movie to a collection?
+The movie ID and the collection type (such as 'favorites' or 'watchlist')
