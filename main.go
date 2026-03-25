@@ -66,6 +66,12 @@ func main() {
 	server.HandleFunc("/api/movies/", movieHandler.GetMovieById)
 	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
 
+	actorRespositary := data.ActorRepositary{DB: db, Logger: logInstance}
+
+	actorHandler := handlers.ActorHandler{Storage: &actorRespositary, Logger: logInstance}
+
+	server.HandleFunc("/api/actors/", actorHandler.GetActorDetails)
+
 	accountHandler := handlers.AccountHandler{Logger: logInstance, Storage: accountRepository}
 	server.HandleFunc("/api/account/register", accountHandler.Register)
 	server.HandleFunc("/api/account/auth", accountHandler.Authenticate)
