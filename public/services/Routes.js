@@ -1,4 +1,5 @@
 import { AccountPage } from "../components/AccountPage.js";
+import { ActorPage } from "../components/ActorPage.js";
 import FavoritePage from "../components/FavoritePage.js";
 import { HomePage } from "../components/HomePage.js";
 import { LoginPage } from "../components/LoginPage.js";
@@ -45,4 +46,9 @@ export const routes = [
     component: WatchlistPage,
     loggedIn: true,
   },
+
+  {
+    path : /\/actors\/(\d+)/,
+    component : ActorPage,
+  }
 ];

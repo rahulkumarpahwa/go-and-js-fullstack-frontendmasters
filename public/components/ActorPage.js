@@ -5,25 +5,34 @@ export class ActorPage extends HTMLElement {
   constructor() {
     super();
     this.id = null;
+    this.data = null;
+    this.movies = null;
+    this.actor = null;
   }
 
   async render() {
-    const data = API.getActorDetails(this.id);
-    const actor = data?.actor;
-    const movies = data?.movies ?? [];
+    try {
+      this.data = await API.getActorDetails(this.id);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+    this.actor = this.data?.Actor;
+    this.movies = this.data?.Movies;
 
     const div = document.querySelector("#actor-result");
-    div.innerHTML 
+    div.innerHTML = ` <img src="${this.actor.image_url ?? "/images/generic_actor.jpg"}" alt="Picture of  ${this.actor.first_name} ${this.actor.last_name}" />
+      <p>${this.actor.first_name} ${this.actor.last_name}</p>`;
 
     const ul = document.querySelector("#actor-movies-result");
 
-    if (movies && movies.length > 0) {
+    if (this.movies && this.movies.length > 0) {
       ul.innerHTML = "";
-      movies.forEach((movie) => {
+      this.movies.forEach((movie) => {
         const li = document.createElement("li");
         li.appendChild(new MovieItem(movie));
+        ul.appendChild(li); 
       });
-      this.appendChild(ul);
     }
   }
 
@@ -33,8 +42,8 @@ export class ActorPage extends HTMLElement {
 
     this.appendChild(content);
 
-    this.render();
     this.id = this.params[0];
+    this.render();
   }
 }
 

@@ -99,6 +99,8 @@ func main() {
 	server.HandleFunc("/movies/", catchAllClientRoutesHandler)
 	server.HandleFunc("/account/", catchAllClientRoutesHandler)
 
+	server.HandleFunc("/actors/", catchAllClientRoutesHandler)
+
 	// we are serving the static files such as the images, css and json file. This should be last route.
 	server.Handle("/", http.FileServer(http.Dir("./public")))
 

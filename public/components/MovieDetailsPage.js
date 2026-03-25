@@ -1,7 +1,7 @@
 import { API } from "../services/api.js"; // always put the js in the end.
 
 export class MovieDetailsPage extends HTMLElement {
-  constructor(id) {
+  constructor() {
     super(); // must and first
     this.movie = null;
     this.id = null;
@@ -56,9 +56,9 @@ export class MovieDetailsPage extends HTMLElement {
     this.movie.casting.forEach((actor) => {
       const li = document.createElement("li");
       li.innerHTML = `
-      <img src="${actor.image_url ?? "/images/generic_actor.jpg"}" alt="Picture of  ${actor.first_name} ${actor.last_name}" />
+      <a href="/actors/${actor.id}" ><img src="${actor.image_url ?? "/images/generic_actor.jpg"}" alt="Picture of  ${actor.first_name} ${actor.last_name}" />
       <p>${actor.first_name} ${actor.last_name}</p>
-      `;
+       </a>`;
       ulCast.appendChild(li);
     });
   }

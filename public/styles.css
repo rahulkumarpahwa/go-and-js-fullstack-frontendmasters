@@ -160,8 +160,9 @@ movie-item img {
     animation: loading-wave 1.5s infinite ease-in-out;
 }
 
-movie-item {
+#movie-item {
     text-align: center;
+    cursor: pointer;
 }
 
 #movies-result {
@@ -401,7 +402,7 @@ button:hover {
     margin: 20px;
 }
 
-#movie #cast li {
+#movie #cast li a {
     width: 300px;
     background-color: var(--primaryColor);
     margin: 10px 0;
@@ -491,4 +492,35 @@ input[type=text],input[type=password],input[type=email] {
 .collection-delete-button:hover{
     color: white;
     background-color: red;
+}
+
+#template-actor-details h1{
+    text-align: center;
+}
+
+#actor-result{
+    background-color: #555;
+   width: 400px;
+   height: 400px; 
+   padding: 30px;
+   border-radius: 10%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   margin: auto;
+} 
+
+#actor-result img{
+    width: 100%;
+    height: 100%;
+     border-radius: 10%;
+}
+
+#actor-movies-result{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
 }

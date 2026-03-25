@@ -42,7 +42,7 @@ export const API = {
   },
 
   getActorDetails: async (actor_id) => {
-    return await API.fetch(`actor/${actor_id}`);
+    return await API.fetch(`actors/${actor_id}`);
   },
 
   send: async (serviceName, data) => {
