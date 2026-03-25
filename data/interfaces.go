@@ -17,3 +17,7 @@ type AccountStorage interface {
 	SaveCollection(models.User, int, string) (bool, error)
 	RemoveFromCollection(models.User, int, string) (bool, error)
 }
+
+type ActorStorage interface {
+	GetActorDetails(int) (models.Actor, []models.Movie, error)
+}
