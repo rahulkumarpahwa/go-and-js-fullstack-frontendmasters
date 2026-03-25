@@ -3,7 +3,20 @@ export class ActorPage extends HTMLElement {
     super();
   }
 
-  connectedCallback() {}
+  async render(){
+    
+  }
+
+
+  connectedCallback() {
+    const template = document.getElementById("template-actor-details")
+    const content = template.content.cloneNode(true);
+
+    this.appendChild(content);
+
+    this.render();
+
+  }
 }
 
 customElements.define("actor-page", ActorPage);

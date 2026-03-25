@@ -40,6 +40,11 @@ export const API = {
       collection,
     });
   },
+
+  getActorDetails: async (actor_id) => {
+    return await API.fetch(`actor/${actor_id}`);
+  },
+
   send: async (serviceName, data) => {
     try {
       const response = await fetch(API.baseURL + serviceName, {
