@@ -1,4 +1,5 @@
 import { API } from "../services/api.js"; // always put the js in the end.
+import { SimilarMovies } from "./SimilarMovies.js";
 
 export class MovieDetailsPage extends HTMLElement {
   constructor() {
@@ -61,6 +62,9 @@ export class MovieDetailsPage extends HTMLElement {
        </a>`;
       ulCast.appendChild(li);
     });
+
+    const similarMovies = document.querySelector("#similar-movies");
+    similarMovies.appendChild(new SimilarMovies(this.id));
   }
 
   //NOTE : this method will called once the code is parsed and mounted and WILL NOT BE CALLED AGAIN WHEN THE ATTRIBUTE CHANGES.

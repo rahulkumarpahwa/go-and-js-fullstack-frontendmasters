@@ -147,11 +147,11 @@ func (h *MovieHandler) GetSimilarMovies(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	movie_ids, err := h.Storage.FetchSimilarMovies(id_num)
+	movies, err := h.Storage.FetchSimilarMovies(id_num)
 	if err != nil {
-		h.Logger.Error("Searched Movies IDs Not found error ", err)
+		h.Logger.Error("Searched Similar Movies Not found error ", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	h.writeJSONResponse(w, movie_ids)
+	h.writeJSONResponse(w, movies)
 }

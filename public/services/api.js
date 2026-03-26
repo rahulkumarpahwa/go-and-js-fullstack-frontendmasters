@@ -45,6 +45,10 @@ export const API = {
     return await API.fetch(`actors/${actor_id}`);
   },
 
+  getSimilarMovies: async (movie_id) => {
+    return await API.fetch(`movies/similar/${movie_id}`);
+  },
+
   send: async (serviceName, data) => {
     try {
       const response = await fetch(API.baseURL + serviceName, {
