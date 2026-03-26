@@ -524,3 +524,22 @@ input[type=text],input[type=password],input[type=email] {
     gap: 20px;
     padding: 40px;
 }
+
+#template-similar-movies {
+    margin: auto;
+}
+
+#template-similar-movies section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#similar-movies{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0 20px 0;
+    margin: 20px 0 20px 0;
+}

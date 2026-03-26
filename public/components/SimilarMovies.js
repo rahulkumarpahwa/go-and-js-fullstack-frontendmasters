@@ -10,12 +10,11 @@ export class SimilarMovies extends HTMLElement {
 
   async render() {
     try {
-      console.log(this.movie_id);
-      this.movies = API.getSimilarMovies(this.movie_id);
+      this.movies = await API.getSimilarMovies(this.movie_id);
     } catch (error) {
       console.log(error);
     }
-    const ul = document.querySelector("#similar-movies");
+    const ul = this.querySelector("#similar-movies");
     if (this.movies && this.movies.length > 0) {
       ul.innerHTML = "";
       this.movies.forEach((movie) => {
@@ -32,8 +31,6 @@ export class SimilarMovies extends HTMLElement {
     this.appendChild(content);
 
     this.render();
-    console.log(this.movie_id);
-    // TODO : this component is not showing on the screen although data is being fetched.
   }
 }
 

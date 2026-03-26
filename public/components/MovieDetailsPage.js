@@ -63,7 +63,7 @@ export class MovieDetailsPage extends HTMLElement {
       ulCast.appendChild(li);
     });
 
-    const similarMovies = document.querySelector("#similar-movies");
+    const similarMovies = this.querySelector("#similar-movies-details-page");
     similarMovies.appendChild(new SimilarMovies(this.id));
   }
 
