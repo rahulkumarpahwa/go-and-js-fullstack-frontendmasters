@@ -264,53 +264,28 @@ func (r *MovieRepository) fetchMovieRelations(m *models.Movie) error {
 }
 
 func (r *MovieRepository) FetchSimilarMovies(movie_id int) ([]int, error) {
-	query := `SELECT DISTINCT keyword_id FROM movie_keywords WHERE movie_id = $1`
+	query := `SELECT DISTINCT movie_id FROM movie_keywords WHERE keyword_id IN 
+	( SELECT keyword_id 
+    FROM movie_keywords 
+    WHERE movie_id = $1 ) AND movie_id != $1
+	LIMIT $2`
 
-	rows, err := r.db.Query(query, movie_id)
+	rows, err := r.db.Query(query, movie_id, defaultLimit)
 	if err != nil {
-		r.logger.Error("failed to get the keyword_ids ", err)
+		r.logger.Error("failed to get the movieIds ", err)
 		return []int{}, err
 	}
 
 	defer rows.Close()
-	var keywordIds []int
+	var movieIds []int
 	for rows.Next() {
-		var keywordId int
-		if err := rows.Scan(&keywordId); err != nil {
+		var movieId int
+		if err := rows.Scan(&movieId); err != nil {
 			r.logger.Error("Failed to scan keyword row for id", err)
 			return []int{}, err
 		}
-		keywordIds = append(keywordIds, keywordId)
+		movieIds = append(movieIds, movieId)
 	}
 
-	var movieIds []int
-	for _, id := range keywordIds {
-		query = `SELECT DISTINCT movie_id FROM movie_keywords WHERE keyword_id = $1 LIMIT $2`
-		rows, err := r.db.Query(query, id, defaultLimit)
-		if err != nil {
-			r.logger.Error("failed to get the movie_ids ", err)
-			return []int{}, err
-		}
-
-		defer rows.Close()
-		for rows.Next() {
-			var movieId int
-			if err := rows.Scan(&movieId); err != nil {
-				r.logger.Error("Failed to scan movie row for id", err)
-				return []int{}, err
-			}
-			movieIds = append(movieIds, movieId)
-		}
-
-	}
-
-	// removing the current movie id from the similar movies ids:
-	result_movieIds := []int{}
-	for _, v := range movieIds {
-		if v != movie_id {
-			result_movieIds = append(result_movieIds, v)
-		}
-	}
-
-	return result_movieIds, nil
+	return movieIds, nil
 }
