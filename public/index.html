@@ -87,13 +87,10 @@
       <article>
         <section>
           <h3>Similar Movies</h3>
-          <ul id="similar-movies">
-
-          </ul>
+          <ul id="similar-movies"></ul>
         </section>
       </article>
     </template>
-
 
     <!-- template for the MoviePage.js which works with search -->
     <template id="template-movies">
@@ -227,12 +224,14 @@
       </section>
     </template>
 
-<!-- template for the ActorPage.js -->
+    <!-- template for the ActorPage.js -->
     <template id="template-actor-details">
-      <h1 style="text-align: center; padding: 20px;">Cast Page</h1>
+      <h1 style="text-align: center; padding: 20px">Cast Page</h1>
       <div id="actor-result"></div>
       <section>
-           <h3 style="text-align: center; padding: 30px;">Movies in which Casted</h3>
+        <h3 style="text-align: center; padding: 30px">
+          Movies in which Casted
+        </h3>
         <ul id="actor-movies-result">
           <loading-wave
             data-elements="5"
@@ -242,6 +241,11 @@
           </loading-wave>
         </ul>
       </section>
+    </template>
+
+    <template id="template-collection-tag">
+      <span id="favorite-tag"> </span>
+      <span id="watchlist-tag"> </span>
     </template>
 
     <footer>

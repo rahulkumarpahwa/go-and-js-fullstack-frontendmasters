@@ -543,3 +543,21 @@ input[type=text],input[type=password],input[type=email] {
     padding: 20px 0 20px 0;
     margin: 20px 0 20px 0;
 }
+
+collection-tag{
+    background: var(--color6);
+    width: 100%;
+    height: 78px;
+    margin: 20px;
+}
+
+#template-collection-tag, #template-collection-tag span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+#template-collection-tag span svg{
+    
+}

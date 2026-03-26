@@ -1,4 +1,5 @@
 import { API } from "../services/api.js"; // always add the .js at the end.
+import { CollectionTag } from "./CollectionTag.js";
 import { MovieItem } from "./MovieItem.js";
 
 export class HomePage extends HTMLElement {
@@ -25,6 +26,7 @@ export class HomePage extends HTMLElement {
       movies.forEach((movie) => {
         const li = document.createElement("li");
         li.appendChild(new MovieItem(movie));
+        li.appendChild(new CollectionTag());
         ul.appendChild(li);
       });
     }
