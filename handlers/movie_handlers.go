@@ -136,3 +136,22 @@ func (h *MovieHandler) SearchMoviesByName(w http.ResponseWriter, r *http.Request
 
 	h.writeJSONResponse(w, movies)
 }
+
+func (h *MovieHandler) GetSimilarMovies(w http.ResponseWriter, r *http.Request) {
+	idStr := r.URL.Path[len("/api/movies/similar/"):]
+	id_num, err := strconv.Atoi(idStr)
+
+	if err != nil {
+		h.Logger.Error("Error in the id Conversion to Int ", err)
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	movie_ids, err := h.Storage.FetchSimilarMovies(id_num)
+	if err != nil {
+		h.Logger.Error("Searched Movies IDs Not found error ", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	h.writeJSONResponse(w, movie_ids)
+}

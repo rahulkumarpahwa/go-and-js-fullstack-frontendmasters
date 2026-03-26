@@ -64,6 +64,7 @@ func main() {
 	// http://localhost:8080/api/movies/search?name="apple"&order="DESC"&genre="1"
 	server.HandleFunc("/api/movies/search", movieHandler.SearchMoviesByName)
 	server.HandleFunc("/api/movies/", movieHandler.GetMovieById)
+	server.HandleFunc("/api/movies/similar/", movieHandler.GetSimilarMovies)
 	server.HandleFunc("/api/genres", movieHandler.GetTopGenres)
 
 	actorRespositary := data.ActorRepositary{DB: db, Logger: logInstance}
