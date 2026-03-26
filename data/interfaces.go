@@ -8,7 +8,7 @@ type MovieStorage interface {
 	GetMovieById(id int) (models.Movie, error)
 	SearchMoviesByName(name string, order string, genre *int) ([]models.Movie, error)
 	GetAllGenres() ([]models.Genre, error)
-	FetchSimilarMovies(int) ([]int, error)
+	FetchSimilarMovies(int) ([]models.Movie, error)
 }
 
 type AccountStorage interface {
