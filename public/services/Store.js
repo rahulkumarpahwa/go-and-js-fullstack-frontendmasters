@@ -5,6 +5,20 @@ const Store = {
   },
   favorites: [],
   watchlist: [],
+  removeFromWatchlist: (value) => {
+    if (value != null) {
+      const newList = proxiedStore.watchlist.filter((v) => v !== value);
+      proxiedStore.watchlist = newList;
+    }
+    return true;
+  },
+  removeFromFavorites: (value) => {
+    if (value != null) {
+      const newList = proxiedStore.favorites.filter((v) => v !== value);
+      proxiedStore.favorites = newList;
+    }
+    return true;
+  },
 };
 
 if (localStorage.getItem("jwt")) {
@@ -21,15 +35,12 @@ export const proxiedStore = new Proxy(Store, {
         localStorage.setItem("jwt", value);
       }
     } else if (prop === "watchlist" || prop === "favorites") {
-      target[prop] = [...target[prop], value];
+      if (Array.isArray(value)) {
+        target[prop] = value;
+      } else {
+        target[prop] = [...target[prop], value];
+      }
+      return true;
     }
-    return true;
-  },
-  removeFromList: (target, prop, value) => {
-    if (prop === "watchlist" || prop === "favorites") {
-      let newList = target[prop].filter((v) => v !== value);
-      target[prop] = newList;
-    }
-    return true;
   },
 });

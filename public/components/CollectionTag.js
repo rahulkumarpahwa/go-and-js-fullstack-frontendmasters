@@ -1,4 +1,4 @@
-import { proxiedStore } from "../services/Store";
+import { proxiedStore } from "../services/Store.js";
 
 export class CollectionTag extends HTMLElement {
   constructor() {

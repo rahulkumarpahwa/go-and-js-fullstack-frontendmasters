@@ -113,9 +113,11 @@ window.app = {
         if (response.success) {
           switch (collection) {
             case "favorite":
+              window.app.Store.favorites = movie_id;
               app.Router.go("/account/favorites");
               break;
             case "watchlist":
+              window.app.Store.watchlist = movie_id;
               app.Router.go("/account/watchlist");
           }
         } else {
@@ -135,9 +137,11 @@ window.app = {
         if (response.success) {
           switch (collection) {
             case "favorite":
+              window.app.Store.removeFromFavorites(movie_id);
               app.Router.go("/account/favorites");
               break;
             case "watchlist":
+              window.app.Store.removeFromWatchlist(movie_id);
               app.Router.go("/account/watchlist");
           }
         } else {
