@@ -1,12 +1,15 @@
+import { proxiedStore } from "../services/Store";
+
 export class CollectionTag extends HTMLElement {
   constructor() {
     super();
+    this.movie_id = null;
   }
 
   async render() {
-    try {
-    } catch (error) {
-      console.log(error);
+    if(proxiedStore.loggedIn){
+      
+
     }
 
     const favorite = this.querySelector("#favorite-tag");
