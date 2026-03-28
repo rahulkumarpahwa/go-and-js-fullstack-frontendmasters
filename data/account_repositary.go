@@ -334,6 +334,17 @@ func (r *AccountRepository) RemoveFromCollection(user models.User, movieID int, 
 	return true, nil
 }
 
+// func (r *AccountRepository) DeleteUser(user models.User) (bool, error) {
+// 	// steps :
+// 	// check if the user is logggedIn
+// 	// check if the user exist
+// 	// set the time_deleted and user is deleted.
+
+
+
+// 	return true, nil
+// }
+
 var (
 	ErrRegistrationValidation   = errors.New("registration failed")
 	ErrAuthenticationValidation = errors.New("authentication failed")

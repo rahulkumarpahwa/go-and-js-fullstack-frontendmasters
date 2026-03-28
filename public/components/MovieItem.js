@@ -10,7 +10,7 @@ export class MovieItem extends HTMLElement {
   connectedCallback() {
     this.id = "movie-item";
     const url = "/movies/" + this.movie.id;
-    this.innerHTML = `<a onclick="event.preventDefault(); app.Router.go('${url}')"><article>
+    this.innerHTML = `<a onclick="event.preventDefault(); app.Router.go('${url}')"  title="Go to ${this.movie.title}"><article>
                     <img src="${this.movie.poster_url}" alt="${this.movie.title} Poster"/>
                     <p>${this.movie.title}  ${this.movie.release_year}</p>
         </article></a>`;

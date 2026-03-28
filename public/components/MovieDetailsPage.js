@@ -37,6 +37,14 @@ export class MovieDetailsPage extends HTMLElement {
     <dd>${this.movie.popularity.toFixed(2)}</dd>
     `;
 
+    if (app.Store.favorites.includes(this.movie.id)) {
+      this.querySelector("#btnFavorites").disabled = true;
+    }
+
+    if (app.Store.watchlist.includes(this.movie.id)) {
+      this.querySelector("#btnWatchlist").disabled = true;
+    }
+
     this.querySelector("#btnFavorites").addEventListener("click", () => {
       window.app.saveToCollection(this.movie.id, "favorite");
     });
