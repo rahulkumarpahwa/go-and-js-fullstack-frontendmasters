@@ -12,7 +12,18 @@ import { proxiedStore } from "./services/Store.js";
 //   document.querySelector("main").appendChild(new HomePage());
 // });
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", async (event) => {
+  if (app.Store.loggedIn) {
+    try {
+      const favorites = await API.getFavorites();
+      app.Store.favorites = favorites.map((f) => f.id);
+
+      const watchlist = await API.getWatchlist();
+      app.Store.watchlist = watchlist.map((w) => w.id);
+    } catch (error) {
+      console.log("can't fetch the collection tag data!", error);
+    }
+  }
   Router.init();
 });
 

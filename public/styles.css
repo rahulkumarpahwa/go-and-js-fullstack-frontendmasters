@@ -544,20 +544,34 @@ input[type=text],input[type=password],input[type=email] {
     margin: 20px 0 20px 0;
 }
 
-collection-tag{
-    background: var(--color6);
-    width: 100%;
-    height: 78px;
-    margin: 20px;
+collection-tag {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
 }
 
-#template-collection-tag, #template-collection-tag span{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1px;
+#template-collection-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  position: relative;
 }
 
-#template-collection-tag span svg{
-    
+#favorite-tag svg {
+  background-color: var(--color6);
+  margin: 3px;
+  padding: 4px;
+  border-radius: 15px;
+}
+
+#watchlist-tag svg {
+  background-color: var(--highlightColor);
+  margin: 3px;
+  padding: 4px;
+  border-radius: 15px;
 }

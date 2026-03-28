@@ -1,41 +1,44 @@
 import { proxiedStore } from "../services/Store.js";
 
 export class CollectionTag extends HTMLElement {
-  constructor() {
+  constructor(id) {
     super();
-    this.movie_id = null;
+    this.movie_id = id;
   }
 
   async render() {
-    if(proxiedStore.loggedIn){
-      
-
-    }
-
-    const favorite = this.querySelector("#favorite-tag");
-    favorite.innerHTML = `<svg
+    if (this.movie_id) {
+      if (proxiedStore.loggedIn) {
+        // check if the movie_id is in the current  watchlist, favorites or not!
+        const favorite = this.querySelector("#favorite-tag");
+        if (proxiedStore.favorites.includes(this.movie_id)) {
+          favorite.innerHTML = `<svg
           xmlns="http://www.w3.org/2000/svg"
-          height="24px"
+          height="28px"
           viewBox="0 -960 960 960"
-          width="24px"
-          fill="#e3e3e3"
+          width="28px"
+           fill="currentColor"
         >
           <path
             d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"
           />
         </svg>`;
+        } else {
+          favorite.innerHTML = "";
+        }
 
-    const watchlist = this.querySelector("#watchlist-tag");
-    watchlist.innerHTML = `    <svg
+        const watchlist = this.querySelector("#watchlist-tag");
+        if (proxiedStore.watchlist.includes(this.movie_id)) {
+          watchlist.innerHTML = `    <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
-          height="24px"
-          width="24px"
+          height="28px"
+          width="28px"
           version="1.1"
           id="_x32_"
           viewBox="0 0 512 512"
           xml:space="preserve"
-         fill="#e3e3e3"
+         fill="currentColor"
         >
           <g>
             <path
@@ -43,13 +46,17 @@ export class CollectionTag extends HTMLElement {
             />
           </g>
         </svg>`;
+        } else {
+          watchlist.innerHTML = "";
+        }
+      }
+    }
   }
 
   connectedCallback() {
     const template = document.getElementById("template-collection-tag");
     const content = template.content.cloneNode(true);
     this.appendChild(content);
-
     this.render();
   }
 }

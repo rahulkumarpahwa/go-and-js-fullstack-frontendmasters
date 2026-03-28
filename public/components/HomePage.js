@@ -26,7 +26,7 @@ export class HomePage extends HTMLElement {
       movies.forEach((movie) => {
         const li = document.createElement("li");
         li.appendChild(new MovieItem(movie));
-        li.appendChild(new CollectionTag());
+        li.appendChild(new CollectionTag(movie.id));
         ul.appendChild(li);
       });
     }

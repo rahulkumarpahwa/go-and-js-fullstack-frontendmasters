@@ -40,7 +40,7 @@ export const proxiedStore = new Proxy(Store, {
       } else {
         target[prop] = [...target[prop], value];
       }
-      return true;
     }
+    return true;
   },
 });
